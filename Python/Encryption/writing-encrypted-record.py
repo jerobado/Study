@@ -14,4 +14,4 @@ encrypted_record = model.encrypt(record)
 
 
 with open('record.txt', 'a') as file:
-    file.write(f'{str(encrypted_record)}\n')
+    file.write(f'{encrypted_record}\n')
