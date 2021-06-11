@@ -1,9 +1,11 @@
+TARGET = compiler
+
 # Rules
-compiler: compiler.o
-	gcc -o compiler compiler.o
+$(TARGET): compiler.o
+	gcc -o $(TARGET) compiler.o
 
 main.o: compiler.c
 	gcc -c compiler.c
 
 clean:
-	rm -f *.out *.o compiler
+	rm -f *.out *.o $(TARGET)
