@@ -5,8 +5,30 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 Definition of terms/concept
 ---
 
+**Application model**
+- it's a typically a whole group of different services and classes and is more of a concept -- anything needed to perform some sort of business action in your application.
+
+**Ambient values**
+- are the route values for the current request. They include controller and action when called from an MVC controller but can also include additional route values that were set when the action or Razor Page was initially located using routing.
+
 **Binding model**
+- extract values from a request and uses them to create .NET object.
 - is one or more objects that act as a "container" for the data provided in a request -- data that's required by a page handler
+- input to a Razor page
+- is all the information that's provided by the user when making a request, as well as additional contextual data.
+- model binding is great for reducing repetitive code
+- there a two (2) different ways to use model binding in Razor Pages:
+    1. Decorate properties on your PageModel witht the `[BindProperty]` attribute
+    2. Add parameters to your page handler method.
+
+**Blazor**
+- is a framework that allows you to build interactive client-side web applications by either leveraging the WebAssembly standard to run .NET code directly in your browser, or by using a stateful model with SignalR
+
+**DataAnnotations**
+- handy attributes that creates validation for your fields
+- System.Components.DataAnnotations
+- i.e. `[Required]`, `[EmailAddress]`, `[Phone]`, etc.
+- are good for input validation of properties in isolation, but not so good for validating business roles
 
 **Dependency Injection or the Inversion of Control (IoC)**
 - is a software engineering technique in which an object (client) uses another object's method (services)
@@ -14,11 +36,18 @@ Definition of terms/concept
 **Endpoint**
 - is some handler that returns a reponse. Each endpoint is associated with a URL pattern.
 
+**Implicit Page Handler**
+- a page handler that gets executed by the EndpointMiddleware when no request has been matched.
+- it takes part in model binding and use page filter but execute no logic.
+
 **Internet Information Services (IIS)**
 - extensible web server for the Windows NT family.
 
 **Kestrel**
 - a cross-platform HTTP server where ASP.NET Core can run
+
+**Metadata**
+- describes other data, specifying the rules and characteristics the data should adhere to
 
 **Middleware**
 - consists of small components that execute in sequence when the application receives an HTTP request. They can perform a whole host of functions, such as logging, identifying the current user for a request, serving static files, and handling errors.
@@ -31,6 +60,7 @@ Definition of terms/concept
 - for building Web APIs
 - a common pattern for designing apps that have User Interfaces (UI)
 - it aims to separate the management and manipulation of data from its visual representation
+- it's all about separation of concern
 - MODEL: the data that needs to be displayed
 - VIEW: is reponsible for generating the final representation of the data
 - CONTROLLER: orchestrate the MODEL and VIEW
@@ -60,14 +90,14 @@ Definition of terms/concept
 - is a unit of deployment, which will be compiled into a .dll file or an executable. Each separate app is a separate project. Multiple projects can be built and developed at once ina solution
 
 **Query string**
-- is a part of a URL that contains additional data that doesn't fit in the path, i.e. "/product?name=big-widget", or "/product?id=12"
+- is a part of a URL that contains additional data that doesn't fit in the path, i.e. `/product?name=big-widget`, or `/product?id=12`
 
 **Razor Pages**
 - server-side rendered "page-based" websites
 - contain business logic, load data from a database, or use forms to allow user to submit information
 
 **Route template**
-- is a URL pattern that is used to match against request URLs. They're strings of fixed values, like "/test".
+- is a URL pattern that is used to match against request URLs. They're strings of fixed values, like `/test`.
 - they can have placeholders for variables that can contain optional values
 
 **Route values**
