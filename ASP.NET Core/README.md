@@ -34,7 +34,9 @@ Definition of terms/concept
 - is a software engineering technique in which an object (client) uses another object's method (services)
 
 **Endpoint**
-- is some handler that returns a reponse. Each endpoint is associated with a URL pattern.
+- is some handler that returns a reponse
+- each endpoint is associated with a URL pattern
+- its your application's units of executable request-handling code
 
 **Implicit Page Handler**
 - a page handler that gets executed by the EndpointMiddleware when no request has been matched.
@@ -61,9 +63,21 @@ Definition of terms/concept
 - a common pattern for designing apps that have User Interfaces (UI)
 - it aims to separate the management and manipulation of data from its visual representation
 - it's all about separation of concern
-- MODEL: the data that needs to be displayed
-- VIEW: is reponsible for generating the final representation of the data
-- CONTROLLER: orchestrate the MODEL and VIEW
+- MODEL:
+    - the data that needs to be displayed
+    - responsible to represent the state of the application and any business logic or operations that should be performed
+    - business logic should be encapsulated in the model along with any implementation logic persisting the state of application
+- VIEW:
+    - is reponsible for generating the final representation of the data
+    - responsible for **<ins>presenting content</ins>** through the user interface
+    - it uses Razor view engine to embed .NET code in HTML markup
+    - there should be minimal logic within views, and any logic in them should relate to presenting content
+    - use View Component, ViewModel, or view template to simply complex views
+- CONTROLLER:
+    - orchestrate what MODEL to use and which VIEW to represent
+    - handles and responds to user input and interaction
+    - controllers shouldn't be overly complicated by too many responsibilities
+    - push business logic out of the controller if its becoming overly complex into the domain model
 
 **MVC controller**
 - is a class that contains a number of logically grouped action methods
