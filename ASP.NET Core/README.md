@@ -1,9 +1,7 @@
-ASP.NET Core
----
+# ASP.NET Core
 _ASP.NET Core_ is an open source, cross-platform web framework for building web applications.
 
-Definition of terms/concept
----
+# Definition of terms/concept
 
 **Application model**
 - it's a typically a whole group of different services and classes and is more of a concept -- anything needed to perform some sort of business action in your application.
@@ -139,3 +137,8 @@ Definition of terms/concept
 
 **wwwroot**
 - is a special folder wherein the browser is only allowed to access. This file include static files like CSS, JavaScript, images or static HTML file
+
+# References
+All of the contents herein are based on the following:
+- [ASP.NET Core in Action, 2nd Edition](https://www.manning.com/books/asp-net-core-in-action-second-edition) by Andrew Lock
+- [ASP.NET Documentation](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0) by Microsoft
