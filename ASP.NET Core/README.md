@@ -3,6 +3,9 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 
 # Definition of terms/concept
 
+**Application logic**
+- things that implement your business logic in your application
+
 **Application model**
 - it's a typically a whole group of different services and classes and is more of a concept -- anything needed to perform some sort of business action in your application.
 
@@ -22,6 +25,9 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 **Blazor**
 - is a framework that allows you to build interactive client-side web applications by either leveraging the WebAssembly standard to run .NET code directly in your browser, or by using a stateful model with SignalR
 
+**Business logic**
+- business rule or requirements that needs to be implemented in your application
+
 **DataAnnotations**
 - handy attributes that creates validation for your fields
 - System.Components.DataAnnotations
@@ -30,6 +36,10 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 
 **Dependency Injection or the Inversion of Control (IoC)**
 - is a software engineering technique in which an object (client) uses another object's method (services)
+
+**Directive**
+- is a statement in a Razor file that changes the way the template is parsed or compiled.
+- i.e. `@using <namespace>` directive, which makes objects in the `<namespace>` avaialable.
 
 **Endpoint**
 - is some handler that returns a reponse
@@ -46,6 +56,10 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 **Kestrel**
 - a cross-platform HTTP server where ASP.NET Core can run
 
+**Layout**
+- is a template that includes common code
+- it can't be rendered directly, but it can be rendered in conjuction with a normal Razor views.
+
 **Metadata**
 - describes other data, specifying the rules and characteristics the data should adhere to
 
@@ -61,17 +75,18 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 - a common pattern for designing apps that have User Interfaces (UI)
 - it aims to separate the management and manipulation of data from its visual representation
 - it's all about separation of concern
-- MODEL:
+- `MODEL`:
     - the data that needs to be displayed
     - responsible to represent the state of the application and any business logic or operations that should be performed
     - business logic should be encapsulated in the model along with any implementation logic persisting the state of application
-- VIEW:
+- `VIEW`:
     - is reponsible for generating the final representation of the data
     - responsible for **<ins>presenting content</ins>** through the user interface
     - it uses Razor view engine to embed .NET code in HTML markup
     - there should be minimal logic within views, and any logic in them should relate to presenting content
     - use View Component, ViewModel, or view template to simply complex views
-- CONTROLLER:
+    - it shouldn't call methods in the `PageModel` -- the view should generally only be accessing data that has already been collected and exposed as properties
+- `CONTROLLER`:
     - orchestrate what MODEL to use and which VIEW to represent
     - handles and responds to user input and interaction
     - controllers shouldn't be overly complicated by too many responsibilities
@@ -82,18 +97,23 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 - action or action methods is a method that runs in response to a request
 - action method on an MVC controller
 
-**Reflection**
-- in .NET allows you to obtain information about types in your application at runtime. You can use reflection to create instance of classes at runtime and to invoke and access them.
-
-**Reverse proxy**
-- external HTTP server outside your ASP.NET Core application (i.e. IIS, Apache HTTP, NGINX, etc.)
+**Page handler**
+- is a method that runs in response to a request. Razor Page models must be derived from the PageModel class. They can contain multiple page handlers, though typically they only contain one or two.
+- page handler on a Razor page
+- each Razor Page typically handles a single _route_, but it can handle multiple HTTP verbs like `GET` and `POST`.
+- each page handler typically handles a single HTTP verb.
 
 **Page-based websites**
 - websites that user can browse multiple pages, enters data into forms, and generally consumes content
 
-**Page handler**
-- is a method that runs in response to a request. Razor Page models must be derived from the PageModel class. They can contain multiple page handlers, though typically they only contain one or two.
-- page handler on a Razor page
+**PageModel**
+- this is where you define the binding models for a page, which extracts data from the incoming request.
+- it's also where you defing the page's page handlers
+
+**Partial views**
+- are a bit like Razor Pages without the `PageModel` and handlers
+- they are purely about rendering small sections of HTML, rather than handling requests, model binding, and validation, cand calling the application model
+- they are great for encapsulating small usable bits of HTML that you need to generate on multiple Razor Pages
 
 **Pipeline**
 - the process wherein a piece of middleware can call another piece of middleware, which in turn can call another, and so on.
@@ -107,6 +127,19 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 **Razor Pages**
 - server-side rendered "page-based" websites
 - contain business logic, load data from a database, or use forms to allow user to submit information
+- generally refers to the page-based paradigm that combines routing, model binding and HTML generation using Razor views
+- a **<ins>Razor Page</ins>** represents a single "endpoint". It typically consists of two files: a `.cshtml` file containing the Razor view, and a `.cshtml.cs` file containing the page's `PageModel`.
+
+**Razor view**
+- also called Razor templates are used to generate HTML
+- they are typically used in the final stage of a Razor Page to generate the HTML response to send back to the user.
+- use `@model <modelname>` to access the model and render it to the user
+
+**Reflection**
+- in .NET allows you to obtain information about types in your application at runtime. You can use reflection to create instance of classes at runtime and to invoke and access them.
+
+**Reverse proxy**
+- external HTTP server outside your ASP.NET Core application (i.e. IIS, Apache HTTP, NGINX, etc.)
 
 **Route template**
 - is a URL pattern that is used to match against request URLs. They're strings of fixed values, like `/test`.
@@ -134,6 +167,15 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 
 **Template**
 - basic code required to build an application
+
+**ViewImports**
+- `_ViewImports.cshtml` file contains directive that will be inserted at the top of every view.
+- to avoid adding `@using` statements to every view
+- should be located in the root of Pages folder
+
+**ViewStart**
+- `_ViewStart.cshtml` file contains C# arbitrary code at the start of every view in your application.
+- should be located in the root of Pages folder
 
 **wwwroot**
 - is a special folder wherein the browser is only allowed to access. This file include static files like CSS, JavaScript, images or static HTML file
