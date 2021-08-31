@@ -165,6 +165,11 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 **Single Responsiblity Principle (SRP)**
 - states that every class should be responsible for only a single piece of functionality -- it should only need to change if that required functionality changes.
 
+**Tag Helpers**
+- are extra attributes on standard HTML elements (or new elements entirely) that work by modifying the HTML elements they're attached to.
+- they can modify the HTML element they're attached to, but they can't modify anything else on your page.
+- simplify the fiddly mechanics of building forms
+
 **Template**
 - basic code required to build an application
 
