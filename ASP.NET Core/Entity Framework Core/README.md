@@ -23,3 +23,6 @@ _Entity Framework (EF) Core_ is a lightweight, extensible, open source and cross
 ### How to migrate your database?
 1. Use `add-migration <migration name>` to generate migration code
 2. Use `update-database` to execute SQL code to database
+
+**Reminders**
+- Use the `update-database` command when transferring your project from your local machine to another
