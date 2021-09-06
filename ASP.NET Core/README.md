@@ -28,6 +28,18 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 **Business logic**
 - business rule or requirements that needs to be implemented in your application
 
+**Cache-busting query string**
+- adds a query parameter to a URL, such as `?v=1`
+- browser will cache the response and use it for subsequent requests to the URL
+- when resource changes, the query string is also changed, for example to `?v=2`
+- browser will see this as a request for a new resource and will make a fresh request
+- `asp-append-version="true"`:
+    - this attribute will load the file being referenced and generate a unique hash based on its contents
+    - i.e. `<script src="/js/site.js?v=EWaMeWsJBYWmL2g_KkgXZQ5nPe"></script>`
+
+**Cross-site request forgery (CSRF)**
+- are attack exploits on a website that can allow actions to be executed on your website by an unrelated malicious website.
+
 **DataAnnotations**
 - handy attributes that creates validation for your fields
 - System.Components.DataAnnotations
