@@ -194,6 +194,10 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 - `_ViewStart.cshtml` file contains C# arbitrary code at the start of every view in your application.
 - should be located in the root of Pages folder
 
+**Web API**
+- exposes multiple URLs that can be used to access or change data on a server, typically accessed using HTTP
+- the server-side application that the client communicates with
+
 **wwwroot**
 - is a special folder wherein the browser is only allowed to access. This file include static files like CSS, JavaScript, images or static HTML file
 
