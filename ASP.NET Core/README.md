@@ -12,6 +12,10 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 **Ambient values**
 - are the route values for the current request. They include controller and action when called from an MVC controller but can also include additional route values that were set when the action or Razor Page was initially located using routing.
 
+**Attribute Routing**
+- the mechanism for associating API controller actions with a given route template
+- use primarily with REST APIs
+
 **Binding model**
 - extract values from a request and uses them to create .NET object.
 - is one or more objects that act as a "container" for the data provided in a request -- data that's required by a page handler
@@ -130,6 +134,9 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 **Pipeline**
 - the process wherein a piece of middleware can call another piece of middleware, which in turn can call another, and so on.
 
+**ProblemDetails**
+- is a web specification for providing machine-readable errors for HTTP APIs.
+
 **Project**
 - is a unit of deployment, which will be compiled into a .dll file or an executable. Each separate app is a separate project. Multiple projects can be built and developed at once ina solution
 
@@ -154,8 +161,8 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 - external HTTP server outside your ASP.NET Core application (i.e. IIS, Apache HTTP, NGINX, etc.)
 
 **Route template**
-- is a URL pattern that is used to match against request URLs. They're strings of fixed values, like `/test`.
-- they can have placeholders for variables that can contain optional values
+- is a URL pattern that is used to match against request URLs. They're strings of fixed values, i.e. `/test`
+- they can have placeholders for variables that can contain optional values, i.e. `/test/{id?}`
 
 **Route values**
 - are the values extracted from a URL based on a given route template
