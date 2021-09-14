@@ -41,6 +41,10 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
     - this attribute will load the file being referenced and generate a unique hash based on its contents
     - i.e. `<script src="/js/site.js?v=EWaMeWsJBYWmL2g_KkgXZQ5nPe"></script>`
 
+**Content negotiation**
+- the process of determining the format of data to send to the clients
+- it is where a client says which types of data it can accept using the `Accept` header and the server picks the best one it can handle
+
 **Cross-site request forgery (CSRF)**
 - are attack exploits on a website that can allow actions to be executed on your website by an unrelated malicious website.
 
