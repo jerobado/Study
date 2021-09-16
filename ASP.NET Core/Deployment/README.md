@@ -15,6 +15,9 @@
 
 ## Definition of Terms/Concepts
 
+**Application pool**
+- in IIS represents an application process
+
 **Reverse proxy**
 - is the program that listens for HTTP requests from the internet and then makes requests to your app as though the request had come from the internet directly.
 - is exposed directly to the internet , whereas the underlying web server is exposed only to the proxy.
