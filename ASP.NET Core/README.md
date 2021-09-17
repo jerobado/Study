@@ -100,11 +100,11 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
     - responsible to represent the state of the application and any business logic or operations that should be performed
     - business logic should be encapsulated in the model along with any implementation logic persisting the state of application
 - `VIEW`:
-    - is reponsible for generating the final representation of the data
+    - is responsible for generating the final representation of the data
     - responsible for **<ins>presenting content</ins>** through the user interface
     - it uses Razor view engine to embed .NET code in HTML markup
     - there should be minimal logic within views, and any logic in them should relate to presenting content
-    - use View Component, ViewModel, or view template to simply complex views
+    - use View Component, ViewModel, or view template to simplify complex views
     - it shouldn't call methods in the `PageModel` -- the view should generally only be accessing data that has already been collected and exposed as properties
 - `CONTROLLER`:
     - orchestrate what MODEL to use and which VIEW to represent
