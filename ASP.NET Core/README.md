@@ -54,12 +54,22 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 - i.e. `[Required]`, `[EmailAddress]`, `[Phone]`, etc.
 - are good for input validation of properties in isolation, but not so good for validating business roles
 
-**Dependency Injection or the Inversion of Control (IoC)**
+**Dependency Injection (DI)**
+- is a specific version of the more general principle of _Inversion of Control (IoC)_
+- IoC describes the pattern where the _framework_ calls your code to handle a request, instead of you writing the code to parse the request
 - is a software engineering technique in which an object (client) uses another object's method (services)
+- is a design pattern that helps you develop loosely coupled code
+
+**Dependency Injection Container**
+- is responsible for creating instances of services
+- it knows how to construct an instance of a service by creating all its dependencies and passing these tot he constructor
+
+**Dependency Graph**
+- is the set of objects that must be created in order to create a specific requested "root" object
 
 **Directive**
 - is a statement in a Razor file that changes the way the template is parsed or compiled.
-- i.e. `@using <namespace>` directive, which makes objects in the `<namespace>` avaialable.
+- i.e. `@using <namespace>` directive, which makes objects in the `<namespace>` available.
 
 **Endpoint**
 - is some handler that returns a reponse
@@ -181,6 +191,7 @@ _ASP.NET Core_ is an open source, cross-platform web framework for building web 
 
 **Services**
 - within the context of ASP.NET Core, it refers to any class that provides functionality to an application. These could be classes exposed by a library or code you've written for your application.
+- in the context of _Dependency Injection (DI)_, services refers to any class or interface that the DI container creates when required
 
 **Single-page Applications (SPA)**
 - websites with heavily interactive on the client side like games
