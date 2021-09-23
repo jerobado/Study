@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>AutoComplete Tutorial</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link href="https://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+    <!-- AutoComplete -->
+    <script>
+        $( function() {
+            var Cities = [
+                "Manila",
+                "Mandaluyong",
+                "Marikina",
+                "Pasig",
+                "Quezon City",
+                "San Juan",
+                "Caloocan",
+                "Malabon",
+                "Navotas",
+                "Valenzuela",
+                "Las Piñas",
+                "Makati",
+                "Muntinlupa",
+                "Parañaque",
+                "Pasay",
+                "Pateros",
+                "Taguig"
+            ];
+            $("#Cities").autocomplete({
+                source: Cities,
+                minLength: 3
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="ui-widget">
+        <label for="Cities">Cities: </label>
+        <input id="Cities">
+    </div>
+
+</body>
+</html>
