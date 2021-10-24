@@ -16,7 +16,7 @@
 
 ## Value Types
 - type that directly contain their values, which means that the memeory is allocated inline in whatever context the variable is declared
-- there is no separete heap allocation or garbage collection overhead for value-type variables
+- there is no separate heap allocation or garbage collection overhead for value-type variables
 
 ```C#
 // Example
