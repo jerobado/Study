@@ -67,3 +67,8 @@ System.console.WriteLine(x);
     System.Console.WriteLine(x);
 }
 ```
+
+# Resource(s)
+
+**Books**
+- [C# 9.0 in a Nutshell: The Definitive Reference by Joseph Albahari](https://www.oreilly.com/library/view/c-90-in/9781098100957/)
