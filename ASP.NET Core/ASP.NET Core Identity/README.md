@@ -64,6 +64,7 @@
 - is a small piece of text that's sent back and fort between the browser and your app along with each request, consisting of a name and a value
 
 **principal**
+- every request is associated with a user called _principal_
 - is the current user, implemented as `ClaimsPrincipal` class
 - it contains a collection of `Claims` that describe the user
 
