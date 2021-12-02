@@ -18,6 +18,11 @@
 **Dockerfile**
 - is a text file container scripts of instructions that is used to create a container image
 
+**Docker Compose**
+- is a tools for defining and running multi-container Docker applications
+- you use a YAML file to configure your application's services
+- then, with a single command, you create and start all the services from your configuration
+
 **Docker Desktop**
 - enables you to build and share containerized applications and microservices
 
@@ -30,9 +35,6 @@
 **Docker Registry**
 - a service responsible for hosting and distributing images
 - collection of images repositories
-
-
-
 
 # Installation
 
@@ -68,3 +70,4 @@
 - [Docker via Wikipedia](https://en.wikipedia.org/wiki/Docker_(software))
 - [Docker images for ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-6.0)
 - [Tutorial: Containerize a .NET Core app](https://docs.microsoft.com/en-us/dotnet/core/docker/build-container?tabs=linux)
+- [Use a database server running as a container](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/database-server-container)
