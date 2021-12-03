@@ -24,6 +24,12 @@
 **model**
 - is a map of a process or phenomenon that captures a useful property
 
+**value object**
+- a business concept that has data but not identity
+- is any domain object that is uniquely identified by the data it holds
+
+**entity**
+- a domain object that has long-lived identity
 
 # Resource(s)
 
