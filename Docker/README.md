@@ -58,16 +58,10 @@
 
 **NOTE:** These commands are done in WSL with Ubuntu OS.
 
-# Tutorials
-
-## How to run an ASP.NET Core application in Docker?
-1. Publish the ASP.NET Core application
-2. Create a Docker image
-3. Create a Docker container
-
 # Resource(s)
 - [Docker Documentation](https://docs.docker.com/)
 - [Docker via Wikipedia](https://en.wikipedia.org/wiki/Docker_(software))
 - [Docker images for ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-6.0)
 - [Tutorial: Containerize a .NET Core app](https://docs.microsoft.com/en-us/dotnet/core/docker/build-container?tabs=linux)
 - [Use a database server running as a container](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/database-server-container)
+- [Quickstart: Compose and ASP.NET Core with SQL Server](https://docs.docker.com/samples/aspnet-mssql-compose/)
