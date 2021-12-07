@@ -44,3 +44,4 @@
     ```
     $ dotnet publish --output <directory> --configuration Release
     ```
+2. Copy the publish folder from your local to the remote server
