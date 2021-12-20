@@ -6,11 +6,19 @@
 
 # Concepts
 
+
+
 **Command Query Responsibility Segregation (CQRS)**
 - is an architectural pattern for separating reading data (a 'query') from writing to data (a 'command')
 
 **context**
 - the setting in which a word or statement appears that determines its meaning
+
+**bounded context**
+- the boundary of properties or behaviour or a particular domain model
+
+**context mapping**
+- th eprocess of identifying bounded context and their relationships to one another
 
 **domain**
 - the subject area to which the user applies a program is the domain of the so
