@@ -41,3 +41,9 @@
 
 **Aggregate Root**
 - the entry point of an aggregate which ensures the integrity of the entire graph
+
+**Repository**
+- managed the life cycle of the persisted objects
+- represents all objects of a certain type as a conceptual set like a collection with more elaborate queryihng capability
+- an abstraction your domain model uses to define what persistence needs it has
+- a class the encapsulates the data persistence for an aggregate root
