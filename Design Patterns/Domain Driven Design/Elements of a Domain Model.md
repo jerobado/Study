@@ -27,7 +27,7 @@
 - e.g., String, Date, Money
 
 **Service**
-- provide a place in the model to hold behaviour that doesn't belong elsewher in the domain
+- provide a place in the model to hold behaviour that doesn't belong elsewhere in the domain
 - not a natural part of an entity or value object
 - has an interface defined in terms of other domain model elements
 - stateless, but may have side effects
@@ -47,3 +47,13 @@
 - represents all objects of a certain type as a conceptual set like a collection with more elaborate queryihng capability
 - an abstraction your domain model uses to define what persistence needs it has
 - a class the encapsulates the data persistence for an aggregate root
+
+**Domain Events**
+- a class that captures the occurence of an event in a domain object
+- alert that some activity occured or some state changed in teh context
+- other domain can subscribe to the "news"
+- can communicate outside of the domain
+- encapsulated as objects
+- each event is a full-fledge class
+- e.g., AppointmentScheduled, AppointmentConfirmed, ClientRegistered, etc.
+- create events as needed, not just in case
