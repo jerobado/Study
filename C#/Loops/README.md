@@ -44,9 +44,9 @@ for (int i = 0; i < 3; i++)
     Console.WriteLine(i);
 
 // for-loop with multiple initialization variables
-for (int i = 0; prevFib = 1, curFib = 1; i < 10; i++)
+for (int i = 0, prevFib = 1, curFib = 1; i < 10; i++)
 {
-    Console.WriteLinen(prevFib);
+    Console.WriteLine(prevFib);
     int newFib = prevFib + curFib;
     prevFib = curFib;
     curFib = newFib;
