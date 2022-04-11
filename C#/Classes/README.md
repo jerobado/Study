@@ -60,3 +60,39 @@ public class SamplePoint
 }
 ```
 
+## Properties
+- are like field but they contain logic like methods
+- a property is declared like a field but with a `get`/`set` block added
+
+For example:
+```C#
+public class Stock
+{
+    decimal currentPrice;           // The private "backing" field
+    public decimal CurrentPrice     // The public property
+    {
+        get { return currentPrice; }
+        set { currentPrice = value; }
+    }
+}
+
+// similar syntax
+public decimal Worth
+{
+    get => currentPrice * sharedOwned;
+    set => sharedOwned = value / currentPrice;
+}
+
+// automatic properties
+public class Stock
+{
+    ...
+    public decimal CurrentPrice { get; set; }
+}
+```
+
+## Methods
+- a _method_ performs an action in a series of statements
+- can receive _input_ data from the caller by specifying _parameters_ and _output_ data back to the caller by specifying a _return type_
+- a method can specify a `void` return type, indicating that it doesn't return any value to its caller
+- a method can also output data back to the caller via `ref`/`out` parameters
