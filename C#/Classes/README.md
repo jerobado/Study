@@ -89,6 +89,9 @@ public class Stock
     ...
     public decimal CurrentPrice { get; set; }
 }
+
+// property initializers
+public decimal CurrentPrice { get; set; } = 999;
 ```
 
 ## Methods
