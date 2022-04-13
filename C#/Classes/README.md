@@ -99,3 +99,38 @@ public decimal CurrentPrice { get; set; } = 999;
 - can receive _input_ data from the caller by specifying _parameters_ and _output_ data back to the caller by specifying a _return type_
 - a method can specify a `void` return type, indicating that it doesn't return any value to its caller
 - a method can also output data back to the caller via `ref`/`out` parameters
+
+# Partial Types ad Methods
+- allow a type definition to be split--typically across multiple files
+- all the parts must use the `partial` keyword
+- all the parts must have the same accessibility, such as `public`, `private`, and so on
+
+For example:
+```C#
+public partial class Employee
+{
+    public void DoWork()
+    {
+    }
+}
+
+public partial class Employee
+{
+    public void GoToLunch()
+    {
+    }
+}
+
+// result at compile time
+pubilc class Employee
+{
+    public void DoWork()
+    {
+    }
+
+    publilc void GoToLunch()
+    {
+    }
+}
+```
+
