@@ -102,3 +102,30 @@ Stock s = a as Stock;       // s is nul, no exception thrown
 if (s != null)
     Console.WriteLine(s.SharesOwned);
 ```
+
+## `is` operator
+- tests whether a variable matches a _pattern_
+- tests whether an object derives from a specified class (or implements an interface)
+
+For example:
+```C#
+// test before downcasting
+if (a is Stock)
+    Console.WriteLine(((Stock)a).SharesOwned);
+
+// introducing a variable while using 'is' operator
+if (a is Stock s)
+    Console.WriteLine(s.SharesOwned);
+
+// the variable is available for immediate consumption
+if (a is Stock s && s.SharesOwned > 10000000)
+    Console.WriteLine("Wealthy");
+
+// even if it remains outside scope of the 'is' expression
+if (a is Stock s && s.SharesOwned > 10000000)
+    Console.WriteLine("Wealthy");
+Else
+    s = new Stock();    // s is in scope
+
+Console.WriteLine(s.SharesOwned);   // still in scope
+```
