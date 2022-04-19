@@ -129,3 +129,29 @@ Else
 
 Console.WriteLine(s.SharesOwned);   // still in scope
 ```
+
+# Virtual Function Members
+- a function marked as `virtual` can be overridden by subclasses wanting to provide a specialized implementation
+- methods, properties, indexers, and events can all be declared `virtual`
+
+For example:
+```C#
+public class Asset
+{
+    public string Name;
+    public virtual decimal Liability => 0;  // expression-bodied property
+}
+
+// use override modifer to override a virtual method
+public class House : Asset
+{
+    public decimal Mortgage;
+    public override decimal Liability => Mortgage;
+}
+
+// effect
+House mansion = new House { Name="McMansion", Mortgage=250000 };
+Asset a = mansion;
+Console.WriteLine(mansion.Liability);       // 250000
+Console.WriteLine(a.Liability);             // 250000
+```
