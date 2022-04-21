@@ -155,3 +155,52 @@ Asset a = mansion;
 Console.WriteLine(mansion.Liability);       // 250000
 Console.WriteLine(a.Liability);             // 250000
 ```
+
+# Abstract Classes and Members
+- a class declared as _abstract_ can never be instantiated. Only its concrete _subclasses_ can be instantiated
+- abstract classes are able to define _abstract members_
+- abstract members are like virtual members except that they don't provide a default implementation. That implementation must be provided by the subclass unless that subclass is also declared abstact
+
+For example:
+```C#
+public abstract class Asset
+{
+    // Note empty implementation
+    public abstract decimal NetValue { get; }
+}
+
+public class Stock : Asset
+{
+    public long SharesOwned;
+    public decimal CurrentPrice;
+
+    // Override like a virtual method
+    public override decimal NetValue => CurrentPrice * SharesOwned;
+}
+```
+
+## `base` keyword
+- accessing an overridden function member from the subclass
+- calling a base constructor
+
+For example:
+```C#
+public class House : Asset
+{
+    ...
+    public override decimal Liability => base.Liability + Mortgage
+}
+
+// calling a base constructor
+public class Baseclass
+{
+    public int X;
+    public Baseclass() { }
+    public Baseclass(int x) { this.X = x } // we want to use this in Subclass
+}
+
+public class Subclass : Baseclass
+{
+    public Subclass(int x) : base(x) { } // we do it like this
+}
+```
