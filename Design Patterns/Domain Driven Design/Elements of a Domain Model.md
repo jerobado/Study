@@ -14,7 +14,12 @@
 
 **Entity**
 - a mutable class with an identity (not tied to its property values) used for tracking and persistence
+- what can happen
+- when it can happen
+- what conditions dictate when it can do that thing
 - tables names corresponding to your domain models
+- something that needs to be tracked over time and whose attributes are likely to change over time
+- e.g., Users, Movies, Student, Transactions, etc.
 
 **Value Objects**
 - an immutable class whose idenity is dependent on the combination of its values
