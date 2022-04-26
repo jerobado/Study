@@ -29,3 +29,17 @@ string s = (string)stack.Pop();     // Downcast, so explicit cast is needed
 
 Console.WriteLine(s);               // sakana
 ```
+
+## Boxing & Unboxing
+- _boxing_ is the act of converting a value-type instance to a reference-type instance
+- the reference type can be either the `object` class or an interface
+
+For example:
+```C#
+// Boxing
+int x = 9;
+object obj = x;         // Box the int
+
+// Unboxing
+int y = (int)obj;       // Unbox the int
+```
