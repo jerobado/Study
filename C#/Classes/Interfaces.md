@@ -13,3 +13,12 @@ public interface IEnumerator
     void Reset();
 }
 ```
+
+## Extending an Interface
+- interfaces can derive from other interfaces
+
+For example:
+```C#
+public interface IUndoable             { void Undo(); }
+public interface IRedoable : IUndoable { void Redo(); }
+```
