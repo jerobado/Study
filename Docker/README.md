@@ -1,11 +1,11 @@
 # Docker
-- is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver psoftware in packages called containers
+- is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers
 - _containers_ are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels
 
 # Concepts
 
 **container**
-- is a sandboxed process o nyour machine that is isolated from all other processes on the host machine, The isolation leverages _kernel namespaces_ and _cgroups_
+- is a sandboxed process on your machine that is isolated from all other processes on the host machine, The isolation leverages _kernel namespaces_ and _cgroups_
 - is a runnable instance of an image, You can create, start, stop, move, or delete a contianer using the Docker API or CLI
 - can be run on local machines, virtual machines or deployed to the cloud
 - is portable (can be run on any OS)
