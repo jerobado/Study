@@ -11,4 +11,22 @@ public enum BorderSide
     Top,
     Bottom
 }
+
+// assigning with default values
+public enum BordeSide
+{
+    Left = 1,
+    Right = 2,
+    Top = 3,
+    Bottom = 4
+}
+
+// with explicit integral type
+public enum BordeSide : byte
+{
+    Left = 1,
+    Right = 2,
+    Top = 3,
+    Bottom = 4
+}
 ```
