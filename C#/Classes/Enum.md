@@ -30,3 +30,11 @@ public enum BordeSide : byte
     Bottom = 4
 }
 ```
+
+Enum Conversions
+---
+```C#
+int i = (int)BordeSide.Left;
+BorderSide side = (BorderSide) i;
+bool leftOrRight = (int)side <= 2;
+```
