@@ -5,29 +5,28 @@
 
 # Prevention
 
-- Ensure that you only use `@` in an HTML context, not when attempting to insert untrusted input directly into JavaScript
-    ```C#
-    // .cshtml
-    @{
-        var untrustedInput = "<\"123\">";
-    }
+Ensure that you only use `@` in an HTML context, not when attempting to insert untrusted input directly into JavaScript
+```C#
+// .cshtml
+@{
+    var untrustedInput = "<\"123\">";
+}
 
-    @untrustedInput
+@untrustedInput
 
-    // when rendered in .html
-    &lt;&quot;123&quot;&gt;
-    ```
+// when rendered in .html
+&lt;&quot;123&quot;&gt;
+```
 
-- Don't use untrusted input as part of a URL path. Always pass untrusted input as a query string value
+Don't use untrusted input as part of a URL path. Always pass untrusted input as a query string value
+```C#
+var example = "\"Quoted Value with spaces and &\"";
+var encodedValue = _urlEncoder.Encode(example);
 
-    ```C#
-    var example = "\"Quoted Value with spaces and &\"";
-    var encodedValue = _urlEncoder.Encode(example);
+// After encoding the encodedValue variable will contain %22Quoted%20Value%20with%20spaces%20and%20%26%22.
+```
 
-    // After encoding the encodedValue variable will contain %22Quoted%20Value%20with%20spaces%20and%20%26%22.
-    ```
-
-- Always encode untrusted input before output, no matter what validation or sanitization has been performed.
+Always encode untrusted input before output, no matter what validation or sanitization has been performed.
 
 # Resources
 - [Prevent Cross-Site Scripting (XSS) in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cross-site-scripting?view=aspnetcore-6.0)
