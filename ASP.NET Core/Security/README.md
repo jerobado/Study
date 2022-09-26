@@ -4,7 +4,7 @@
 ##  Common vulnerabilities in software
 - [Cross-Site Scripting (XSS) attacks](https://github.com/jerobado/Study/blob/main/ASP.NET%20Core/Security/Cross-Site%20Scripting%20(XSS).md)
 - SQL injection attacks
-- Crose-Site Request Forgery (XSRF/CSRF) attacks
+- [Crose-Site Request Forgery (XSRF/CSRF) attacks](https://github.com/jerobado/Study/blob/main/ASP.NET%20Core/Security/Cross-Site%20Request%20Forgery%20(XSRF-CSRF).md)
 - [Open redirect attacks](https://github.com/jerobado/Study/blob/main/ASP.NET%20Core/Security/Open%20redirects.md)
 
 # Resources
