@@ -1,0 +1,8 @@
+Writing
+---
+
+### Hiragana
+
+### Katakana
+ 
+### Kanji
