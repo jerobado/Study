@@ -1,6 +1,6 @@
 # Authorization
 
-The `AuthorizationMiddleware` is reponsible for applying authorization requirements and ensuring that only authorized user can execute protected endpoints.
+The `AuthorizationMiddleware` is responsible for applying authorization requirements and ensuring that only authorized user can execute protected endpoints.
 
 # How to use simple Authorization in ASP.NET Core?
 
