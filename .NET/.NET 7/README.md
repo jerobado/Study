@@ -90,5 +90,42 @@
 - Generic attributes
 - Newlines in string interpolation expression
 
+# ASP.NET Core 7
+- HTTP/2 WebSockets
+- HTTP/3
+- Output caching
+    - caches the HTTP response
+    - driven by server configuration, not client
+    - added through middleware
+    - endpoint handler is only executing first time
+    - cache can vary by parameter, query, request header...
+- Rate limiting
+    - limit number of requests in given time
+        - X request per second
+        - can be chained
+    - used to protect a system
+        - prevent system abuse
+- Request decompression
+
+# ASP.NET Core Blazor 7
+- new project templates
+- data binding changes
+- location changing events
+- custom elements
+- dynamic auth requests
+- experimental data grid (QuickGrid)
+
+# Minimal APIs
+- reaction against large monolithic APIs
+- few lines of code
+    ```csharp
+    // Program.cs
+    var app = WebApplication.Create(args);
+    app.MapGet("/person", () => new Person("Jero", "Bado"));
+    await app.RunAsync();
+
+    public record Person(string FirstName, string LastName);
+    ```
+
 # Resources
 - [What's New in .NET 7](https://app.pluralsight.com/library/courses/dot-net-7-whats-new/table-of-contents)
