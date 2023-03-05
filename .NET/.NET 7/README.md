@@ -127,5 +127,10 @@
     public record Person(string FirstName, string LastName);
     ```
 
+# MAUI in .NET 7
+- improved performance
+- Map control
+- MAUI with Blazor
+
 # Resources
 - [What's New in .NET 7](https://app.pluralsight.com/library/courses/dot-net-7-whats-new/table-of-contents)
