@@ -1,4 +1,4 @@
-# Basic encryption using cryptography tool
+# Basic encryption using cryptography library
 
 from cryptography.fernet import Fernet
 
@@ -8,21 +8,21 @@ encryption_model = Fernet(master_key)
 message = 'jerobado'
 
 
-def encrypt(message, model, key):
+def encrypt(message, model):
 
-    print(f'master_key: {key}')
-    encrypted_message = model.encrypt(bytes(message, 'utf-8'))
-    print(f'encrypted message: {encrypted_message}')
-    return encrypted_message
+    return model.encrypt(bytes(message, 'utf-8'))
 
 
 def decrypt(token, model):
 
-    decrypted_message = model.decrypt(token)
-    print(f'decrypted message: {decrypted_message}')
-    return decrypted_message
+    return model.decrypt(token)
+    
 
-
-encrypted_message = encrypt(message, encryption_model, master_key)
+# Perform encryption and decryption
+encrypted_message = encrypt(message, encryption_model)
 decrypted_message = decrypt(encrypted_message, encryption_model)
 
+# Display output
+print(f'master_key: {master_key}')
+print(f'encrypted message: {encrypted_message}')
+print(f'decrypted message: {decrypted_message}')
