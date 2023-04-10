@@ -5,29 +5,31 @@
 # Usage
 
 1. Use the `ssh-keygen` command to generate public-private keys in your client machine
+
     ```
-    $ ssh-keygen -f ~/my-super-secret-key -t ecdsa -b 521
+    $ ssh-keygen -f ~/path/to/my-super-secret-key -t ed25519
     ```
+
 2. Copy the Public key to the server using the `ssh-copy-id` command
+    
     ```
-    $ ssh-copy-id -i ~/my-super-secret-key user@domain.com
+    $ ssh-copy-id -i ~/path/to/my-super-secret-key user@domain.com
     ```
+
 3. Login to your remote server
+
     ```
     $ ssh user@domain.com
     ```
 
 # Commands
 `ssh-keygen`
--
 - to create a SSH key pair
 
 `ssh-copy-id`
--
 - to copy/install the authorized key on the server
 
 `ssh-agent`
-- 
 - is a program that can hold a user's private key, so that the private key passphrase only needs to be supplied once
 
 # Definition of Terms/Concepts
