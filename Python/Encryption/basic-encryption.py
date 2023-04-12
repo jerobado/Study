@@ -3,26 +3,54 @@
 from cryptography.fernet import Fernet
 
 
-master_key = Fernet.generate_key()
-encryption_model = Fernet(master_key)
-message = 'jerobado'
+def generate_private_key() -> str:
+
+    return str(Fernet.generate_key(), 'utf-8')
 
 
-def encrypt(message, model):
+def create_fernet_model(key : bytes | str) -> Fernet:
 
-    return model.encrypt(bytes(message, 'utf-8'))
+    return Fernet(key)
 
 
-def decrypt(token, model):
+def encrypt(plaintext: str, model: Fernet) -> str:
 
-    return model.decrypt(token)
+    encoding = 'utf-8'
+    result = model.encrypt(bytes(plaintext, encoding))
     
+    return str(result, encoding)
 
-# Perform encryption and decryption
-encrypted_message = encrypt(message, encryption_model)
-decrypted_message = decrypt(encrypted_message, encryption_model)
 
-# Display output
-print(f'master_key: {master_key}')
-print(f'encrypted message: {encrypted_message}')
-print(f'decrypted message: {decrypted_message}')
+def decrypt(ciphertext: str, model: Fernet) -> str:
+
+    return str(model.decrypt(ciphertext), 'utf-8')
+
+
+# Usage
+def basic_encryption():
+
+    message = 'My Hero - Foo Fighters'
+
+    # Setup encryption
+    private_key = generate_private_key()
+    encryption = create_fernet_model(private_key)
+
+    # Perform encryption and decryption
+    encrypted_message = encrypt(message, encryption)
+    decrypted_message = decrypt(encrypted_message, encryption)
+
+    # Display output
+    print(f'private key: {private_key}')
+    print('\n')
+    print(f'message: {message}')
+    print(f'encrypted message: {encrypted_message}')
+    print(f'decrypted message: {decrypted_message}')
+
+
+basic_encryption()
+
+
+
+
+
+
