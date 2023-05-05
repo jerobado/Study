@@ -2,42 +2,74 @@
 
 Sample code to encrypt/decrypt string:
 ```C#
-public class Security
-    {
-        public static byte[] Key { get; set; }
-        public static byte[] IV { get; set; }
+namespace Security;
 
-        public static string Encrypt(string plaintext)
+public class Encryption
+{
+    public static byte[] Key { get; set; }
+    public static byte[] IV { get; set; }
+
+    public static string Encrypt(string plaintext)
+    {
+        byte[] ciphertext;
+
+        using (Aes model = Aes.Create())
         {
-            // TODO: create an encryption model
-            Aes model = Aes.Create();
             model.Key = Key;
             model.IV = IV;
 
-            return plaintext;
+            ICryptoTransform encryptor = model.CreateEncryptor(model.Key, model.IV);
+
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                using (CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write))
+                {
+                    using (StreamWriter streamWriter = new StreamWriter(cryptoStream))
+                    {
+                        streamWriter.Write(plaintext);
+                    }
+                    ciphertext = memoryStream.ToArray();
+                }
+            }
         }
 
-        public static string Decrypt(string ciphertext) 
-        {
-            return ciphertext;
-        }
-
-        public static Aes CreateAES()
-        {
-            Aes AES = Aes.Create();
-            Key = AES.Key;
-            IV = AES.IV;
-
-            return AES;
-        }
-
-        public static void GenerateKeys()
-        {
-            Aes AES = Aes.Create();
-            Key = AES.Key;
-            IV = AES.IV;
-        }
+        return Convert.ToBase64String(ciphertext);
     }
+
+    public static string Decrypt(string ciphertext) 
+    {
+        string plaintext;
+        byte[] ciphertextBytes = Convert.FromBase64String(ciphertext);
+
+        using (Aes model = Aes.Create())
+        {
+            model.Key = Key;
+            model.IV = IV;
+
+            ICryptoTransform decryptor = model.CreateDecryptor(model.Key, model.IV);
+
+            using (MemoryStream memoryStream = new MemoryStream(ciphertextBytes))
+            {
+                using (CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read))
+                {
+                    using (StreamReader streamReader = new StreamReader(cryptoStream))
+                    {
+                        plaintext = streamReader.ReadToEnd();
+                    }
+                }
+            }
+        }
+
+        return plaintext;
+    }
+
+    public static void GenerateKeys()
+    {
+        Aes AES = Aes.Create();
+        Key = AES.Key;
+        IV = AES.IV;
+    }
+}
 ```
 
 # References
