@@ -16,7 +16,7 @@
     Register an application
     - select **Accounts in this organizational directory only (Study Azure AD only - Single tenant)**
     - Select a platform: Web
-    - URL: https://localhost:&lt;port number&gt;/signin-oidc
+    - URL: https://localhost:1234/signin-oidc
 
 3. Set ID tokens
     - App registration > select your application
