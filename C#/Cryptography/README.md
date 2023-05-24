@@ -1,4 +1,13 @@
-# Encryption
+# Cryptography
+
+List of major cryptography APIs in .NET:
+- Windows Data Protection (DPAPI)
+- Hashing
+- Symmetric encryption
+- Public key encryption and signing
+
+
+## Symmetric encryption
 
 Sample code to encrypt/decrypt string:
 ```C#
