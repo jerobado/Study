@@ -35,6 +35,8 @@
 ### Recommendations
 - if you want to recommend something such as "next item" to buy, "next video" to watch or "next song" to listen
 
+### Data Generation
+- if you want to generate data such as images, videos, articles, posts, etc.
 
 # Resources
 - [Most Common Types of Machine Learning Problems](https://vitalflux.com/most-common-types-machine-learning-problems/)
