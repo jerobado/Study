@@ -1,7 +1,7 @@
 # .NET 8
 
 ### Time abstraction
-- new `TimeProvider`` and `ITimer` interface add _time abstraction_ functionality
+- new `TimeProvider` and `ITimer` interface add _time abstraction_ functionality
 
 ### New methods with random
 
