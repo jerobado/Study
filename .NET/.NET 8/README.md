@@ -27,5 +27,13 @@ New data validation attributes intended for validation scenarios in cloud-native
 - .NET 8 adds support for the SHA-3 hashing primitives
 - SHA-3 is currently supported by Linux with OpenSSL 1.1.1 or later and Windows 11 Build 25324 or later
 
+### Simplified output paths
+- the new, simplified output path structure gathers all build outputs into a common location, which makes it easier for tooling to anticipate
+
+To opt into the new output path format, use one of the following properties in your _Directory.Build.props_ file:
+
+- Add an `ArtifactsPath` property with a value of `$(MSBuildThisFileDirectory)artifacts` (or whatever you want the folder location to be), OR
+- To use the default location, simply set the `UseArtifactsOutput` property to true.
+
 # Resources
 - [What's new in .NET 8](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8)
