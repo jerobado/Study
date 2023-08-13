@@ -35,5 +35,23 @@ To opt into the new output path format, use one of the following properties in y
 - Add an `ArtifactsPath` property with a value of `$(MSBuildThisFileDirectory)artifacts` (or whatever you want the folder location to be), OR
 - To use the default location, simply set the `UseArtifactsOutput` property to true.
 
+### `dotnet publish` and `dotnet pack` assets
+
+Since the `dotnet publish` and `dotnet pack` commands are intended to produce production assets, they now produce Release assets by default.
+
+The following output shows the different behavior between dotnet build and dotnet publish, and how you can revert to publishing Debug assets by setting the PublishRelease property to false.
+
+```cmd
+/app# dotnet new console
+/app# dotnet build
+  app -> /app/bin/Debug/net8.0/app.dll
+/app# dotnet publish
+  app -> /app/bin/Release/net8.0/app.dll
+  app -> /app/bin/Release/net8.0/publish/
+/app# dotnet publish -p:PublishRelease=false
+  app -> /app/bin/Debug/net8.0/app.dll
+  app -> /app/bin/Debug/net8.0/publish/
+```
+
 # Resources
 - [What's new in .NET 8](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8)
