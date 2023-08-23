@@ -31,6 +31,47 @@ Rectangle {
 }
 ```
 
+### Child Objects
+- any object declaration can define child objects through nested object declarations
+- any object declaration implicitly declares an object tree that may contain any number of child objects
+
+**Example**
+
+The `Rectanggle` object declaration below includes `Gradients` object declaration, which in turn contains two `GradientStop` declaration:
+
+```QML
+import QtQuick 2.0
+
+Rectangle {
+    width: 100
+    height: 100
+
+    gradient: Gradient {
+        GradientStop { position: 0.0; color: "yellow" }
+        GradientStop { position: 1.0; color: "green" }
+    }
+}
+```
+
+### Comments
+The syntax for commenting in QML is similar to that of JavaScript:
+- single line comment start with `//` and finish at the end of the line
+- multiline comments start with `/*` and finish with `*/`
+- comments are ignored by the engine when processing QML code
+
+**Example**
+```QML
+Text {
+    text: "Hello world!"    //a basic greeting
+    /*
+        We want this text to stand out from the rest so
+        we give it a large size and different font.
+     */
+    font.family: "Helvetica"
+    font.pointSize: 24
+}
+```
+
 
 # Resources
 - [QML Syntax Basics](https://doc.qt.io/qt-6/qtqml-syntax-basics.html)
