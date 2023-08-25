@@ -40,6 +40,31 @@ Column {
 }
 ```
 
+### Property Attribute
+- a property is an attribute of an object that can be assigned a static value or bound to a dynamic expression
+- a property's value can be read by other objects
+- generally, it can also be modified by another object, unless a particular QML type has explicitly disallowed this for a specific property
+
+**Defining Property Attributes**
+- property names must begin with a lower case letter and can only contain letters, numbers and underscores
+- JavaScript reserved words are not valid property names
+- `default`, `required`, and `readonly` keywords are optional, and modify the semantics of the property being declared
+
+**Syntax**
+```
+[default] [required] [readonly] property <propertyType> <propertyName>
+```
+
+Declaring a custom property name **implicitly** creates a value-change _signal_ for that property, as well as an associated _signal handler_ called `on<PropertyName>Changed`, where `<PropertyName>` is the name of the property with the first letter capitalized.
+
+**Example**
+```QML
+Rectangle {
+    property color previousColor
+    property color nextColor
+    onNextColorChanged: console.log("The next color will be " + nextColor.toString())
+}
+```
 
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
