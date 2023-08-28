@@ -66,5 +66,35 @@ Rectangle {
 }
 ```
 
+**Valid Types in Custom Property Definitions**
+- any of the QML Value Types aside from the enumeration types can be used as custom property types
+
+**Example**
+```QML
+// These are all valid property declarations
+Item {
+    property int someNumber
+    property string someString
+    property url someUrl
+}
+```
+Note: enumaration values are simply whole number values and can be referred to wth the int type instead
+
+The `var` value type is a generic placeholder type that can hold any type of value, includin lists and objects:
+```QML
+property var someNumber: 1.5
+property var someString: "abc"
+property var someBool: true
+property var someList: [1, 2, "three", "four"]
+property var someObject: Rectangle { width: 100; height: 100; color: "red" }
+```
+
+Additionally, any QML object type can be used as a property type. For example:
+```QML
+property Item someItem
+property Rectanle someRectangle
+```
+This applies to custom QML types as well. If a QML type was defined in a file named `ColorfulButton.qml` (in a directory which was then imported by the client), then a property of type `ColorfulButton` would also be valid.
+
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
