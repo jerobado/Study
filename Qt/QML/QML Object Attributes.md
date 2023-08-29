@@ -96,5 +96,26 @@ property Rectanle someRectangle
 ```
 This applies to custom QML types as well. If a QML type was defined in a file named `ColorfulButton.qml` (in a directory which was then imported by the client), then a property of type `ColorfulButton` would also be valid.
 
+**Assigning Values to Property Attributes**
+
+The value of a property of an object instance may be specified in two separate ways:
+- a vlaue assignment on initialization
+- an imperative value assignment
+
+The syntax for assigning a value to a property on initialization is:
+```
+<propertyName> : <value>
+```
+
+An example of property value initialization:
+```QML
+import QtQuick 2.0
+
+Rectangle {
+    color: "red"
+    property color nextColor: "blue" // combined property declaration and initialization
+}
+```
+
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
