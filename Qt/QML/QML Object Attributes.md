@@ -117,5 +117,21 @@ Rectangle {
 }
 ```
 
+**Imperative Value Assignment**
+- an imperative value assignment is where a property value (either static value or binding expression) is assigned to a property from imperative JavaScript code
+- the syntax of an imperative value assignment is just the JavaScript assignment operator
+
+**Example**
+```QML
+import QtQuick 2.0
+
+Rectangle {
+    id: rect
+    Component.onCompleted: {
+        rect.color = "red"
+    }
+}
+```
+
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
