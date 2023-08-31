@@ -133,5 +133,31 @@ Rectangle {
 }
 ```
 
+**Static Values and Bindin Expression Values**
+
+**Static**
+- a constant value which does not depend on other properties
+
+**Binding expression**
+- a JavaScript expression which describes a property's relationship with other properties
+- the variables in this expression are called the property's _dependencies_ 
+
+**Example**
+```QML
+import QtQuick 2.0
+
+Rectangle {
+    // both of these are static value assignments on initialization
+    width: 400
+    height: 200
+
+    Rectangle {
+        // both of these are binding expression value assignments on initialization
+        width: parent.width / 2
+        height: parent.height
+    }
+}
+```
+
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
