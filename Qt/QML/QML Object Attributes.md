@@ -159,5 +159,55 @@ Rectangle {
 }
 ```
 
+**Type Safety**
+- properties are type safe
+- a property can only be assigned a value that matches the property type
+
+For example, if a property is a real, and if you try to assign a string to it, you will get an error:
+```QML
+property int volume: "four"  // generates an error; the property's object will not be loaded
+```
+
+**Special Property Types**
+
+**Object List Property Attributes**
+- a `list` type can be assigned a list of QML object-type values
+
+```QML
+import QtQuick 2.0
+
+Item {
+    states: [
+        State { name: "loading" },
+        State { name: "running" },
+        State { name: "stopped" }
+    ]
+}
+```
+If the list contains a single item, the square brackets may be omitted:
+```QML
+import QtQuick 2.0
+
+Item {
+    states: State { name: "running" }
+}
+```
+An example of list property declaration follows:
+```QML
+import QtQuick 2.0
+
+Rectangle {
+    // declaration without initialization
+    property list<Rectangle> siblingRects
+
+    // declaration with initialization
+    property list<Rectangle> childRects: [
+        Rectangle { color: "red" },
+        Rectangle { color: "blue"}
+    ]
+}
+```
+
+
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
