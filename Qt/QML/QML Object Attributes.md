@@ -208,6 +208,49 @@ Rectangle {
 }
 ```
 
+**Group Properties**
+- in some cases, properties contain a logical group of sub-property attributes
+- these sub-property attributes can be assigned to using either the dot notation or group notation
+
+For example, the `Text` type has a font group property. Below, the first `Text` object initializes its font values using dot notation, while the second uses group notation:
+```QML
+Text {
+    // dot notation
+    font.pixelSize: 12
+    font.b: true
+}
+
+Text {
+    // group notation
+    font { pixelSize: 12; b: true }
+}
+```
+
+**Property Aliases**
+- property aliases are properties which hold a reference to another property.
+- unlike an ordinary property definition, which allocates a new, unique storage space for the property, a property alias connects the newly declared property (called the aliasing property) as a direct reference to an existing property (the aliased property)
+
+For example, below is a Button type with a buttonText aliased property which is connected to the text object of the Text child:
+```QML
+// Button.qml
+import QtQuick 2.0
+
+Rectangle {
+    property alias buttonText: textItem.text
+
+    width: 100; height: 30; color: "yellow"
+
+    Text { id: textItem }
+}
+```
+
+The following code would create a Button with a defined text string for the child Text object:
+
+```QML
+Button { buttonText: "Click Me" }
+```
+
+Here, modifying `buttonText` directly modifies the textItem.text value; it does not change some other value that then updates textItem.text. If `buttonText` was not an alias, changing its value would not actually change the displayed text at all, as property bindings are not bi-directional: the `buttonText` value would have changed if textItem.text was changed, but not the other way around.
 
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
