@@ -252,5 +252,22 @@ Button { buttonText: "Click Me" }
 
 Here, modifying `buttonText` directly modifies the textItem.text value; it does not change some other value that then updates textItem.text. If `buttonText` was not an alias, changing its value would not actually change the displayed text at all, as property bindings are not bi-directional: the `buttonText` value would have changed if textItem.text was changed, but not the other way around.
 
+**Default Properties**
+- an object definition can have a single _default_ property
+- a default property is the property to which a value is assigned if an object is declared within another object's definition without declaraing it as a value for a particular property
+- declaring a property with the optional `default` keyword marks it as the default property
+
+**Example**
+```QML
+// MyLabel.qml
+import QtQuick 2.0
+
+Text {
+    default property var someText
+
+    text: "Hello, " + someText.text
+}
+```
+
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
