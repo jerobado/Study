@@ -269,5 +269,50 @@ Text {
 }
 ```
 
+**Required Properties**
+- required property must be set when an instance of the object is created
+- violation of this rule will result in QML applications not starting if it can be detected statically
+
+**Example**
+```QML
+// ColorRectangle.qml
+Rectangle {
+    required color
+}
+```
+
+**Read-Only Properties**
+- read-only properties must be assigned a static value or a binding expression on initialization
+- after a read-only property is initialized, you cannot change its static value or binding expression anymore
+
+**Example**
+```QML
+Item {
+    readonly property int someNumber: 10
+
+    Component.onCompleted: someNumber = 20  // TypeError: Cannot assign to read-only property
+}
+```
+
+### Signal Attributes
+- a signal is a notification from an object that some event has occured
+- for example, a property has changed, an animation has started or stopped, or when an image has been downloaded
+
+**Example**
+```QML
+import QtQuick 2.0
+
+Item {
+    width: 100; height: 100
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {
+            console.log("Click!")
+        }
+    }
+}
+```
+
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
