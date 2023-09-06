@@ -314,5 +314,52 @@ Item {
 }
 ```
 
+### Signal Handler Attributes
+- Signal handlers are a special sort of method attribute, where the method implementation is invoked by the QML engine whenever the associated signal is emitted.
+- Adding a signal to an object definition in QML will automatically add an associated signal handler to the object definition, which has, by default, an empty implementation.
+- Clients can provide an implementation, to implement program logic.
+
+Consider the following SquareButton type, whose definition is provided in the SquareButton.qml file as shown below, with signals activated and deactivated:
+```QML
+// SquareButton.qml
+Rectangle {
+    id: root
+
+    signal activated(xPosition: real, yPosition: real)
+    signal deactivated
+
+    property int side: 100
+    width: side; height: side
+
+    MouseArea {
+        anchors.fill: parent
+        onReleased: root.deactivated()
+        onPressed: (mouse)=> root.activated(mouse.x, mouse.y)
+    }
+}
+```
+
+These signals could be received by any SquareButton objects in another QML file in the same directory, where implementations for the signal handlers are provided by the client:
+```QML
+// myapplication.qml
+SquareButton {
+    onDeactivated: console.log("Deactivated!")
+    onActivated: (xPosition, yPosition)=> console.log("Activated at " + xPosition + "," + yPosition)
+}
+```
+
+**Property Change Signal Handlers**
+- Signal handlers for property change signal take the syntax form _on&lt;Property>Changed_ where _&lt;Property>_ is the name of the property, with the first letter capitalized.
+
+```QML
+import QtQuick 2.0
+
+TextInput {
+    text: "Change this!"
+
+    onTextChanged: console.log("Text has changed to:", text)
+}
+```
+
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
