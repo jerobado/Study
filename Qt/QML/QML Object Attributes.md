@@ -361,5 +361,24 @@ TextInput {
 }
 ```
 
+### Method Attributes
+- A method of an object type is a function which may be called to perform some processing or trigger further events.
+- A method can be connected to a signal so that it is automatically invoked whenever the signal is emitted.
+
+**Example**
+```QML
+import QtQuick 2.0
+Rectangle {
+    id: rect
+
+    function calculateHeight() : real {
+        return rect.width / 2;
+    }
+
+    width: 100
+    height: calculateHeight()
+}
+```
+
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
