@@ -380,5 +380,36 @@ Rectangle {
 }
 ```
 
+If the method has parameters, they are accessible by name within the method. Below, when the MouseArea is clicked it invokes the moveTo() method which can then refer to the received newX and newY parameters to reposition the text:
+
+```QML
+import QtQuick 2.0
+
+Item {
+    width: 200; height: 200
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: (mouse)=> label.moveTo(mouse.x, mouse.y)
+    }
+
+    Text {
+        id: label
+
+        function moveTo(newX: real, newY: real) {
+            label.x = newX;
+            label.y = newY;
+        }
+
+        text: "Move me!"
+    }
+}
+```
+
+### Attached Properties and Attached Signal Handlers
+- _attached properties_ and _attached signal handlers_ are mechanism that enable objects to be annotated with extra properties or signal handlers that are otherwise unavailable to the object
+- in particular, they allow objects to access properties or signals that are specifically relevant to the individual object
+
+
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
