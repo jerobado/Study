@@ -410,6 +410,52 @@ Item {
 - _attached properties_ and _attached signal handlers_ are mechanism that enable objects to be annotated with extra properties or signal handlers that are otherwise unavailable to the object
 - in particular, they allow objects to access properties or signals that are specifically relevant to the individual object
 
+```QML
+// Attached property
+import QtQuick 2.0
+
+ListView {
+    width: 240; height: 320
+    model: 3
+    delegate: Rectangle {
+        width: 100; height: 30
+        color: ListView.isCurrentItem ? "red" : "yellow"
+    }
+}
+```
+In this case, the name of the attaching type is ListView and the property in question is isCurrentItem, hence the attached property is referred to as ListView.isCurrentItem.
+
+```QML
+// Attached signal handler
+import QtQuick 2.0
+
+ListView {
+    width: 240; height: 320
+    model: ListModel {
+        id: listModel
+        Component.onCompleted: {
+            for (var i = 0; i < 10; i++)
+                listModel.append({"Name": "Item " + i})
+        }
+    }
+    delegate: Text { text: index }
+}
+```
+Since the name of the attaching type is Component and that type has a completed signal, the attached signal handler is referred to as Component.onCompleted.
+
+### Enumeration Attributes
+- enumerations provide a fixed set of named choices
+- they can be declared in QML using the `enum` keyword
+
+```QML
+// MyText.qml
+Text {
+    enum TextType {
+        Normal,
+        Heading
+    }
+}
+```
 
 # Resources
 - [QML Object Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html)
