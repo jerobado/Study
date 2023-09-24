@@ -7,3 +7,5 @@ Azure KeyVault API
 # Resources
 - [Azure Key Vault basic concepts](https://learn.microsoft.com/en-us/azure/key-vault/general/basic-concepts)
 - [Secretless apps with .NET and Azure Key Vault (video)](https://www.youtube.com/watch?v=f8Hf-YUrC10)
+- [Azure Identity client library for .NET - version 1.10.1](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/identity-readme?view=azure-dotnet)
+- [Grant your app access to Key Vault](https://learn.microsoft.com/en-us/azure/azure-app-configuration/use-key-vault-references-dotnet-core?tabs=core6x#grant-your-app-access-to-key-vault)
