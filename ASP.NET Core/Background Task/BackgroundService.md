@@ -1,5 +1,5 @@
 # BackgroundService
-
+- `BackgroundService` is a base class for implementing a long running `IHostedService`.
 
 ```C#
 // SampleService.cs
