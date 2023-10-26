@@ -3,6 +3,19 @@ Azure KeyVault API
 - is a cloud service for securely storing and accessing secrets
 - a secret can be your API keys, passwords, certificates, or cryptographic keys
 
+Example
+```C#
+using Azure.Security.KeyVault.Secrets;
+
+var keyVaultEndpoint = new Uri("<enter URI>");
+var client = new SecretClient(keyVaultEndpoint, new DefaultAzureCredential());
+
+builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
+
+KeyVaultSecret superSecret = client.GetSecret("secretName");
+var mySuperSecret = superSecret.Value;
+```
+
 
 # Resources
 - [Azure Key Vault basic concepts](https://learn.microsoft.com/en-us/azure/key-vault/general/basic-concepts)
