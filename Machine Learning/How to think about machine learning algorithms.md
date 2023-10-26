@@ -38,5 +38,16 @@
 ### Data Generation
 - if you want to generate data such as images, videos, articles, posts, etc.
 
+
+# Machine Learning Process
+1. Pick your problem
+    - identify which type of problem we need to solve
+2. Represent data
+    - represent data using numeric attributes
+3. Apply an algorithm
+    - use a standard algorithm to find a model
+
+
 # Resources
 - [Most Common Types of Machine Learning Problems](https://vitalflux.com/most-common-types-machine-learning-problems/)
+- [How to Think About Machine Learning Algorithms by Swetha Kolalapudi](https://app.pluralsight.com/library/courses/machine-learning-algorithms/table-of-contents)
