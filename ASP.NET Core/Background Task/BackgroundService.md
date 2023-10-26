@@ -9,7 +9,7 @@ namespace Sample.Services
     {
         private readonly IServiceProvider _serviceProvider;
 
-        public SampleService(IServiceProvider serviceProvider)
+        public StudyBackgroundService(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
         }
