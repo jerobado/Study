@@ -10,7 +10,7 @@
     tar -xf *.tar.gz
     cd Python-*
     ```
-    This will extract the folder `cpython-3.8.16` to the current working directory.
+    This will extract the folder `Python-3.8.18` and change the current working directory.
 
 3. Configure before compiling and installing
     ```bash
