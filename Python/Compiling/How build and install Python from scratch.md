@@ -7,7 +7,7 @@
 
 2. Extract downloaded Python version
     ```bash
-    tar -xf *.tar.gz
+    tar -xf *.tar.xz
     cd Python-*
     ```
     This will extract the folder `Python-3.8.18` and change the current working directory.
