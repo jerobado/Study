@@ -1,6 +1,6 @@
 # System Administration
-- is the field of work in which someone manages one ore more computer systems, be they software, hardware, server or workstations
-- its goal is ensuring the computer systems are secure, and running efficiently and effectively
+- is the field of work in which someone manages one or more computer systems, be they software, hardware, server or workstations
+- its goal is ensuring the computer systems are **secure**, and **running efficiently** and **effectively**
 
 ### Responsibilities
 - keep software up to date
