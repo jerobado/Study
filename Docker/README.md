@@ -36,6 +36,9 @@
 - a service responsible for hosting and distributing images
 - collection of images repositories
 
+**microservices**
+- building, deploying, and managing each application feature as its own small app
+
 # Installation
 
 ### Install from package
