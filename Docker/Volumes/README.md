@@ -8,7 +8,26 @@ When you create a volume, it is stored within a directory on the Docker host. Wh
 
 A given volume can be mounted into multiple containers simultaneously. When no running container is using a volume, the volume is still available to Docker and is not removed automatically. You can remove unused volumes using `docker volume prune`.
 
+#### Example
+```yaml
+services:
+  backend:
+    image: example/database
+    volumes:
+      - db-data:/etc/data
 
+  backup:
+    image: backup-service
+    volumes:
+      - db-data:/var/lib/backup/data
+
+volumes:
+  db-data:
+```
+
+The `db-data` volume is mounted at the `/var/lib/backup/data` and `/etc/data` container paths for backup and backend respectively.
+
+Running `docker compose up` creates the volume if it doesn't already exist. Otherwise, the existing volume is used and is recreated if it's manually deleted outside of Compose.
 
 # Resources
 - [Volumes top-level element](https://docs.docker.com/compose/compose-file/07-volumes/)
