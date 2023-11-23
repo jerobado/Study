@@ -32,3 +32,4 @@ Running `docker compose up` creates the volume if it doesn't already exist. Othe
 # Resources
 - [Volumes top-level element](https://docs.docker.com/compose/compose-file/07-volumes/)
 - [Manage data in Docker](https://docs.docker.com/storage/)
+- Getting Started with Docker by Nigel Poulton
