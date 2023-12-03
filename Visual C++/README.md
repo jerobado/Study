@@ -1,5 +1,5 @@
 # Microsoft Visual C++ (MSVC)
-- is a compiler fro the C, C++ and C++/CX programming languages by Microsoft
+- is a compiler for the C, C++ and C++/CX programming languages by Microsoft
 - refers to the C++, C, and assembly language development tools and libraries available as part of Visual Studio on Windows
 
 # Resources
