@@ -44,6 +44,12 @@
 - is an immutable object that contains attributes but has no conceptual identity
 - e.g., when people exchange business cards, for instance, they only care about the information on the card (its attributes) rather than trying to distinguish between each unique card 
 
+**data transfer object (DTO)**
+- is a class representing some data with no logic in it
+- are usually used for transferring data between different applications or different layers within a single application
+- you can look at them as dumb bags of information the sole purpose of which is to just get this information to a recipient
+- An object that carries data between processes in order to reduce the number of method calls.
+
 # Layers
 
 **Domain layer**
@@ -57,6 +63,10 @@
 - it is a thin layer
 - it does not contain business rules or knowledge, but only coordinates tasks and delegates work to collaborations of domain objects in the next layer down
 - it does not have state reflecting the business situation, but it can have state that reflects the progress of a task for the user or the program
+- includes use cases, commands, queries, and their respective handlers, focusing on coordinating tasks and delegating work to the domain and infrastructure layers
+- serves as the bridge between the domain layer and the outer layers of the system, such as the user interface or external services.
+- it’s responsible for implementing use cases, coordinating tasks, and handling cross-cutting concerns like validation and authorization.
+
 
 **Infrastructure layer**
 - is how tht e data that is initially hel in domain entities (in memory) is persisted in databases or another persistent store
@@ -71,3 +81,6 @@
 - [Domain-driven design via Wikipedia](https://en.wikipedia.org/wiki/Domain-driven_design)
 - [Get your feet wet with domain-driven design: 3 guiding principles](https://techbeacon.com/app-dev-testing/get-your-feet-wet-domain-driven-design-3-guiding-principles)
 - [Design a DDD-oriented microservice](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice)
+- [Implementing Domain-Driven Design in C#: Patterns and Practices](https://www.w3computing.com/articles/implementing-domain-driven-design-csharp-patterns-practices/)
+- [DTO vs Value Object vs POCO](https://enterprisecraftsmanship.com/posts/dto-vs-value-object-vs-poco/)
+- [Data Transfer Object](https://martinfowler.com/eaaCatalog/dataTransferObject.html)
