@@ -3,3 +3,4 @@
 
 # Resources
 - [Qt Installer Framework Manual](https://doc.qt.io/qtinstallerframework/index.html)
+- [Deploying app and generating offline installers for Windows Qt Installer Framework tutorial](https://scythe-studio.com/en/blog/deploying-app-and-generating-offline-installers-for-windows-qt-installer-framework-tutorial)
