@@ -20,3 +20,6 @@
 
 ### Troubleshooting
 - https://beebom.com/how-fix-publisher-could-not-be-verified-error-windows-11/
+
+### References
+- [Package from the command line](https://learn.microsoft.com/en-us/windows/msix/package/manual-packaging-root)
