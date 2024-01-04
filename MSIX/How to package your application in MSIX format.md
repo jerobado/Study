@@ -18,6 +18,11 @@
 
 4. Sign your package
 
+### Reminders
+- your package identity, family and publisher name must match the Package Identity in Microsoft Store
+- `<DisplayName>` should match the name of the application that you reserved in Microsoft Store
+
+
 ### Troubleshooting
 - https://beebom.com/how-fix-publisher-could-not-be-verified-error-windows-11/
 
