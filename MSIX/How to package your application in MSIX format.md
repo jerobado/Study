@@ -4,7 +4,7 @@
 
 2. Run MakeAppx.exe
     ```
-    MakeAppx pack /v /h SHA256 /d "eddy-release" /p eddy-package.msix
+    MakeAppx pack /v /h SHA256 /d path/to/your/package /p installer.msix
     ```
 
 3. Create a self-signed certificate 
