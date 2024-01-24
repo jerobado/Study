@@ -3,5 +3,9 @@
 - Azure AI services help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with out-of-the-box and pre-built and customizable APIs and models
 - Example applications include natural language processing for conversations, search, monitoring, translation, speech, vision, and decision-making.
 
+### Available AI services
+- Speech
+- Translator
+
 # References
 - [What are Azure AI services?](https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services)
