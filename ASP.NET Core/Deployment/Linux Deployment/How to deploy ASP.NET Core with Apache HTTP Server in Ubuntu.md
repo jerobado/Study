@@ -31,15 +31,15 @@
 
 1. Download a copy of your publish project to the server
 
-2. Configure **Apache HTTP Serve**r virtual host file
+2. Create and configure **Apache HTTP Server** virtual host file
 
-3. Configure **systemd** service file
+3. Create and configure **systemd** service file
 
 4. [Configure](https://github.com/jerobado/Study/blob/main/Let's%20Encrypt/How%20to%20setup%20Apache%20with%20Let's%20Encrypt%20on%20Ubuntu.md) an SSL Certificate with Let's Encrypt using Certbot
 
 ### Hosting setup
 
-1. Configure a domain or sub-domain in your hosting provider
+1. Create and configure a domain or sub-domain in your hosting provider
 
 ## Resources
 - [Host ASP.NET Core on Linux with Apache](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache?view=aspnetcore-6.0)
