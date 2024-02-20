@@ -2,6 +2,9 @@
 
 ```C#
 using DeepL;
+using System.Text;
+
+Console.OutputEncoding = Encoding.UTF8;
 
 // Create a Translator object
 var apiKey = "your api key here";
