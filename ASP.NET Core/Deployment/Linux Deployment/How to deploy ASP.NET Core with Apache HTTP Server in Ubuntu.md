@@ -41,6 +41,15 @@
 
 1. Create and configure a domain or sub-domain in your hosting provider
 
+## Troubleshooting
+
+#### Certain headers or modules must be enabled
+```
+sudo a2enmod headers
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+```
+
 ## Resources
 - [Host ASP.NET Core on Linux with Apache](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache?view=aspnetcore-6.0)
 - [Applying Migrations](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/applying?tabs=vs)
