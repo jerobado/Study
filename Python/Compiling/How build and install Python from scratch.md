@@ -1,5 +1,17 @@
 # How to build and install Python from scratch
 
+### Install build dependencies
+
+1. Open `/etc/apt/sources.list` and uncomment the line with `deb-src`.
+
+2. Update package index and install the build dependencies:
+    ```bash
+    sudo apt update
+    sudo apt build-dep python3
+    sudo apt install pkg-config
+    ```
+### Building and installing
+
 1. Download your preferred version of Python [here](https://www.python.org/downloads/) or in CPython's GitHub repository [here](https://github.com/python/cpython/tags)
     ```bash
     wget https://www.python.org/ftp/python/3.8.18/Python-3.8.18.tar.xz
@@ -12,7 +24,7 @@
     ```
     This will extract the folder `Python-3.8.18` and change the current working directory.
 
-3. Configure before compiling and installing
+3. Run `configure` script with the following options:
     ```bash
     ./configure --enable-shared --enable-optimizations --with-lto
     ```
@@ -52,3 +64,4 @@
 ## Resources
 - [Build Instructions](https://github.com/python/cpython#build-instructions)
 - [Installing multiple versions](https://github.com/python/cpython#installing-multiple-versions)
+- [Setup and building](https://devguide.python.org/getting-started/setup-building/)
