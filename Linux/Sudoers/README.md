@@ -1,10 +1,6 @@
-Sudoers file
----
+# Sudoers file
 
 The sudoers file which is located in `/etc/sudoers` allows you to manage the use of `sudo` command for all your users.
-
-How-Tos
----
 
 ### Allowing a user to execute a command without sudo password
 
@@ -28,5 +24,12 @@ How-Tos
     ```
 
 
-### Reference(s)
+### Check syntax if correct
+
+```
+sudo visudo -c
+```
+
+# Reference(s)
+- [How To Edit the Sudoers File](https://www.digitalocean.com/community/tutorials/how-to-edit-the-sudoers-file)
 - [Sudoers Manual](https://www.sudo.ws/man/1.8.13/sudoers.man.html)
