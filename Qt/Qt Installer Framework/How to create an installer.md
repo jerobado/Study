@@ -1,6 +1,22 @@
 # How to create an installer
 
-1. Create a `package` directory
+1. Create a folder structure as follows:
+    ```
+    config
+    packages
+        com.vendor.root
+            data
+            meta
+        com.vendor.root.component1
+            data
+            meta
+        com.vendor.root.component1.subcomponent1
+            data
+            meta
+        com.vendor.root.component2
+            data
+            meta
+    ```
 
 2. Create `config.xml` configuration file in **config** directory
     ```xml
@@ -26,11 +42,7 @@
         <Licenses>
             <License name="GNU Lesser General Public License (LGPL) v3.0 Agreement" file="license.txt" />
         </Licenses>
-        <Default>script</Default>
-        <Script>installscript.qs</Script>
-        <UserInterfaces>
-            <UserInterface>page.ui</UserInterface>
-        </UserInterfaces>
+        <Default>true</Default>
     </Package>
     ```
 
@@ -49,3 +61,5 @@
 
 # Resources
 - [Tutorial: Creating an Installer](https://doc.qt.io/qtinstallerframework/ifw-tutorial.html)
+- [Package Directory](https://doc.qt.io/qtinstallerframework/ifw-component-description.html#package-information-file-syntax)
+- [Qt Installer Framework – How to Run an Executable During Installation](https://amin-ahmadi.com/2019/06/29/qt-installer-framework-how-to-run-an-executable-during-installation/)
