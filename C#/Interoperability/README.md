@@ -28,3 +28,4 @@ class Example
 ## References
 - [Interoperability Overview](https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/interop/)
 - [DllImportAttribute Class](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dllimportattribute?view=net-8.0)
+- [Platform Invoke (P/Invoke)](https://learn.microsoft.com/en-us/dotnet/standard/native-interop/pinvoke)
