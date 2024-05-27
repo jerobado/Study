@@ -5,7 +5,7 @@
 
 
 #### Example
-The following code example shows how to use the DllImportAttribute attribute to import the Win32 MessageBox function. The code example then calls the imported method.
+The following code example shows how to use the `DllImportAttribute` attribute to import the Win32 MessageBox function. The code example then calls the imported method.
 
 ```C#
 using System;
