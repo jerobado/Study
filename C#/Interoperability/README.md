@@ -2,7 +2,7 @@
 - Interoperability enables you to preserve and take advantage of existing investments in unmanaged code. 
 - Code that runs under the control of the common language runtime (CLR) is managed code, and code that runs outside the CLR is unmanaged code. 
 - COM, COM+, C++ components, ActiveX components, and Microsoft Windows API are examples of unmanaged code.
-
+- P/Invoke is a technology that allows you to access structs, callbacks, and functions in unmanaged libraries from your managed code.
 
 #### Example
 The following code example shows how to use the `DllImportAttribute` attribute to import the Win32 MessageBox function. The code example then calls the imported method.
