@@ -1,6 +1,5 @@
 # Collections
 
-
 `HashSet<T>`
 - elements are not in ordered
 - implemented with a hashtable that stores just keys
