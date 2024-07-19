@@ -2,7 +2,7 @@
 _Entity Framework (EF) Core_ is a lightweight, extensible, open source and cross-platform version of the popular Entity Framework data access technology.
 
 ## Benefits
-- can serve as an object-relational mapper (O/RM) that enables developers to work with a database using .NET objects.
+- can serve as an object-relational mapper (ORM) that enables developers to work with a database using .NET objects.
 - eliminates the need to write SQL code
 
 # Tutorials
