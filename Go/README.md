@@ -1,4 +1,11 @@
 # Go
+- is a  statically typed, compiled, general purpose and open-source programing language designed by Robert Griesemer, Rob Pike, and Ken Thompson
+
+### Use Cases
+- cloud and network services
+- command-line interfaces (CLI)
+- web developpment
+- development operations and site reliability engineering
 
 # Setup and Installation
 * Follow installation instruction [here](https://golang.org/doc/install)
