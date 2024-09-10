@@ -28,6 +28,7 @@ func main() {
 
 # Resources
 - [Tutorial: Get started with Go](https://go.dev/doc/tutorial/getting-started)
+- [Go by Example](https://gobyexample.com/)
 
 **Books**
 - [Learning Go: An Idiomatic Approach to Real-World Go Programming by Jon Bodner](https://www.oreilly.com/library/view/learning-go/9781492077206/)
