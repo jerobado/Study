@@ -1,3 +1,15 @@
+# Data Types
+
+Go's basic types are as follows:
+- bool
+- string
+- int
+- byte
+- rune
+- float
+- complex
+
+### Example
 ```go
 package main
 
