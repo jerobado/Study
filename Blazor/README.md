@@ -13,6 +13,8 @@
 
 Example
 ```HTML
+@page "/child-content"
+
 <div class="card" style="width:22rem">
     <div class="card-body">
         <h3 class="card-title">@Title</h3>
