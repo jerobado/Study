@@ -4,6 +4,42 @@
 
 ### Events
 `SetParametersAsync`
+- will be executed if the user entered an argument in the URL route. 
+
+#### Example
+```C#
+@page "/set-parameters-async/{Param?}"
+
+<PageTitle>Set Parameters Async</PageTitle>
+
+<p>@message</p>
+
+
+@code {
+    [Parameter]
+    public string? Param { get; set; }
+
+    private string message = "Not set";
+
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        if (parameters.TryGetValue<string>(nameof(Param), out var value))
+        {
+            if (value is null)
+                message = "The value of 'Param' is null.";
+            else
+                message = $"The value of 'Param' is {value}.";
+        }
+
+        await base.SetParametersAsync(parameters);
+    }
+
+}
+
+// Usage
+// /set-parameters-async/hello
+// /set-parameters-async/
+```
 
 `OnInitialized{Async}`
 
