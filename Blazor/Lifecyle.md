@@ -7,13 +7,15 @@
 - will be executed if the user entered an argument in the URL route. 
 
 #### Example
+
+_SetParamsAsync.razor_:
+
 ```C#
 @page "/set-parameters-async/{Param?}"
 
 <PageTitle>Set Parameters Async</PageTitle>
 
 <p>@message</p>
-
 
 @code {
     [Parameter]
@@ -42,6 +44,31 @@
 ```
 
 `OnInitialized{Async}`
+- will be executed during page initialization
+
+#### Example
+
+_OnInit.razor_:
+
+```c#
+@page "/on-initialized"
+
+<PageTitle>On Initialized</PageTitle>
+
+<h3>On Initialized Example</h3>
+
+<p>@message</p>
+
+@code {
+    private string? message;
+
+    protected override void OnInitialized()
+    {
+        message = $"Initialized at {DateTime.Now}.";
+    }
+}
+```
+
 
 `OnParametersSet{Async}`
 
