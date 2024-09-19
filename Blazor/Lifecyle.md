@@ -4,12 +4,11 @@
 
 ### Events
 `SetParametersAsync`
-- will be executed if the user entered an argument in the URL route. 
+- Executed if the user entered an argument in the URL route. 
 
 #### Example
 
 _SetParamsAsync.razor_:
-
 ```C#
 @page "/set-parameters-async/{Param?}"
 
@@ -44,12 +43,11 @@ _SetParamsAsync.razor_:
 ```
 
 `OnInitialized{Async}`
-- will be executed during page initialization
+- Executed during page initialization
 
 #### Example
 
 _OnInit.razor_:
-
 ```c#
 @page "/on-initialized"
 
@@ -69,8 +67,51 @@ _OnInit.razor_:
 }
 ```
 
-
 `OnParametersSet{Async}`
+- Excecuted after the component is initialized in `OnInitialized` or `OnInitializedAsync`
+- When the parent component rerenders and supplies: known or primitive immutable types when at least one parameter has changed; Complex-typed parameters.
+
+#### Example
+
+_OnParamsSet.razor_
+```c#
+@page "/on-params-set"
+@page "/on-params-set/{StartDate:datetime}"
+
+<PageTitle>On Parameters Set</PageTitle>
+
+<h1>On Parameters Set Example</h1>
+
+<p>
+    Pass a datetime in the URI of the browser's address bar. 
+    For example, add <code>/1-1-2024</code> to the address.
+</p>
+
+<p>@message</p>
+
+@code {
+    private string? message;
+
+    [Parameter]
+    public DateTime StartDate { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        if (StartDate == default)
+        {
+            StartDate = DateTime.Now;
+
+            message = $"No start date in URL. Default value applied " +
+                $"(StartDate: {StartDate}).";
+        }
+        else
+        {
+            message = $"The start date in the URL was used " +
+                $"(StartDate: {StartDate}).";
+        }
+    }
+}
+```
 
 `OnAfterRender{Aync}`
 
