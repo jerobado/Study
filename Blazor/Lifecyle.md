@@ -1,9 +1,9 @@
 # Lifecyle
 - The Razor component processes Razor component lifecycle events in a set of synchronous and asynchronous lifecycle methods.
 - The lifecycle methods can be overridden to perform additional operations in components during component initialization and rendering.
+- The events are `Setparameters{Async}`, `OnInitialized{Async}`, `OnParametersSet{Async}`, and `OnAfterRender{Async}`.
 
-### Events
-`SetParametersAsync`
+## `SetParametersAsync`
 - Executed if the user entered an argument in the URL route. 
 
 #### Example
@@ -42,7 +42,7 @@ _SetParamsAsync.razor_:
 // /set-parameters-async/
 ```
 
-`OnInitialized{Async}`
+## `OnInitialized{Async}`
 - Executed during page initialization
 
 #### Example
@@ -113,7 +113,43 @@ _OnParamsSet.razor_
 }
 ```
 
-`OnAfterRender{Aync}`
+## `OnAfterRender{Aync}`
+- `OnAfterRender` and `OnAfterRenderAsync` are invoked after a component has rendered interactively and the UI has finished updating (for example, after elements are added to the browser DOM).
+- Are not called during the prerendering process on the server. The methods are called when the component is rendered interactively after prerendering. 
+
+#### Example
+
+_AfterRender.razor_
+```c#
+@page "/after-render"
+@inject ILogger<AfterRender> Logger 
+
+<PageTitle>After Render</PageTitle>
+
+<h1>After Render Example</h1>
+
+<p>
+    <button @onclick="HandleClick">Log information (and trigger a render)</button>
+</p>
+
+<p>Study logged messages in the console.</p>
+
+@code {
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Logger.LogInformation("OnAfterRender: firstRender = {FirstRender}", firstRender);
+    }
+
+    private void HandleClick()
+    {
+        Logger.LogInformation("HandleClick called");
+    }
+}
+
+// Every first render will set the `firstRender` parameter to `true`.
+// It will also be executed if a button was clicked but the `firstRender` parameter will be set to `false`.
+```
+
 
 ### References
 - [ASP.NET Core Razor component lifecycle](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/lifecycle?view=aspnetcore-8.0)
