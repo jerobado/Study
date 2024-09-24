@@ -67,7 +67,7 @@ _OnInit.razor_:
 }
 ```
 
-`OnParametersSet{Async}`
+## `OnParametersSet{Async}`
 - Excecuted after the component is initialized in `OnInitialized` or `OnInitializedAsync`
 - When the parent component rerenders and supplies: known or primitive immutable types when at least one parameter has changed; Complex-typed parameters.
 
