@@ -1,6 +1,8 @@
 # Blazor Forms
 
-### Exampple
+### Example
+
+_StarshipPlainForm.razor_
 ```c#
 @page "/starship-plain-form"
 @inject ILogger<StarshipPlainForm> Logger
