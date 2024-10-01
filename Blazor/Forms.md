@@ -81,6 +81,12 @@ Instead of using plain forms in Blazor apps, use Blazor's built-in component `Ed
 }
 ```
 
+## Handle Form Submission
+The `EditForm` provides the following callbacks for handling form submission:
+
+- Use `OnValidSubmit` to assign an event handler to run when a form with valid fields is submitted.
+- Use `OnInvalidSubmit` to assign an event handler to run when a form with invalid fields is submitted.
+- Use `OnSubmit` to assign an event handler to run regardless of the form fields' validation status. The form is validated by calling `EditContext.Validate` in the event handler method. If Validate returns `true`, the form is valid.
 
 ### References
 - [ASP.NET Core Blazor forms overview](https://learn.microsoft.com/en-us/aspnet/core/blazor/forms/?view=aspnetcore-8.0)
