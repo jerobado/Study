@@ -26,3 +26,6 @@ _Entity Framework (EF) Core_ is a lightweight, extensible, open source and cross
 
 **Reminders**
 - Use the `update-database` command when transferring your project from your local machine to another
+
+## References
+- [Razor Pages with Entity Framework Core in ASP.NET Core - Tutorial 1 of 8](https://learn.microsoft.com/en-us/aspnet/core/data/ef-rp/intro?view=aspnetcore-8.0&tabs=visual-studio-code)
