@@ -12,13 +12,54 @@ _Entity Framework (EF) Core_ is a lightweight, extensible, open source and cross
     - Domain class
     - Database context
     - Application configuration
-    - Packages (.NET Core 3/5)
+    - Packages (.NET 8)
 2. Add the required packages via NuGet package manager:
     - Microsoft.EntityFrameworkCore.SqlServer
-    - Microsoft.EntityFrameworkCore.Tools   
+    - Microsoft.EntityFrameworkCore.Tools
+    - Microsoft.EntityFrameworkCore.Design
 3. Create the DbContext class
 4. Add the database connection string in `appsettings.json` file
-5. Add your DbContext in the `ConfigureServices` method in `Startup.cs`
+5. Add your DbContext in the `Programs.cs`
+
+### Example
+
+_SampleContext.cs_
+```C#
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+
+namespace Intro;
+
+public class BloggingContext : DbContext
+{
+    public DbSet<Blog> Blogs { get; set; }
+    public DbSet<Post> Posts { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer(
+            @"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;ConnectRetryCount=0");
+    }
+}
+
+public class Blog
+{
+    public int BlogId { get; set; }
+    public string Url { get; set; }
+    public int Rating { get; set; }
+    public List<Post> Posts { get; set; }
+}
+
+public class Post
+{
+    public int PostId { get; set; }
+    public string Title { get; set; }
+    public string Content { get; set; }
+
+    public int BlogId { get; set; }
+    public Blog Blog { get; set; }
+}
+```
 
 ### How to migrate your database?
 1. Use `add-migration <migration name>` to generate migration code
