@@ -153,3 +153,4 @@ _AfterRender.razor_
 
 ### References
 - [ASP.NET Core Razor component lifecycle](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/lifecycle?view=aspnetcore-8.0)
+- [Component lifecycles](https://blazor-university.com/components/component-lifecycles/)
