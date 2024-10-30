@@ -17,5 +17,17 @@ public class Tag
 }
 ```
 
+### Creating a record
+
+// TODO
+
+### Updating a record
+
+// TODO
+
+### Deleting a record
+
+// TODO
+
 ### References
 - [Many-to-many relationships](https://learn.microsoft.com/en-us/ef/core/modeling/relationships/many-to-many)
