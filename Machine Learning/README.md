@@ -1,3 +1,9 @@
+## Tools
+- NumPy
+- scikit-learn
+- Matplotlib
+- Jupyter Notebook
+
 ## Terms
 
 #### Feature extraction
