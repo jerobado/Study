@@ -1,12 +1,12 @@
 # How to deploy ASP.NET Core with Apache HTTP Server in Ubuntu
-- this is a high level overview about ASP.NET Core deployment in Ubuntu with Apache HTTP Server as a reverse proxy
+- This is a high level overview about deploying ASP.NET Core project in Ubuntu with Apache HTTP Server as a reverse proxy.
 
 **Assumptions**
 
-- you have already an existing working website in your production server
-- Apache HTTP Server is already installed in your production server
-- Apache HTTP Server headers and mods are already enabled
-- .NET Runtime or SDK is already installed in your production server, see installation tutorial [here]((https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu))
+- You have already an existing working website in your production server.
+- Apache HTTP Server is already installed in your production server.
+- Apache HTTP Server headers and mods are already enabled.
+- .NET Runtime or SDK is already installed in your production server, see installation tutorial [here]((https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu)).
 
 
 ### Project setup
@@ -29,13 +29,15 @@
 
 ### Server setup (production)
 
-1. Download a copy of your publish project to the server
+1. Download a copy of your publish project to the server, use `sftp` or `scp` tool
 
-2. Create and configure **Apache HTTP Server** virtual host file
+2. Transfer your donwloaded project to `/var/www/project/`
 
-3. Create and configure **systemd** service file
+3. Create and configure **Apache HTTP Server** virtual host file in `/etc/apache2/sites-available/{project}.conf`
 
-4. [Configure](https://github.com/jerobado/Study/blob/main/Let's%20Encrypt/How%20to%20setup%20Apache%20with%20Let's%20Encrypt%20on%20Ubuntu.md) an SSL Certificate with Let's Encrypt using Certbot
+4. Create and configure **systemd** service file in `/etc/systemd/system/{project}.service`
+
+5. [Configure](https://github.com/jerobado/Study/blob/main/Let's%20Encrypt/How%20to%20setup%20Apache%20with%20Let's%20Encrypt%20on%20Ubuntu.md) an SSL Certificate with Let's Encrypt using `certbot` tool
 
 ### Hosting setup
 
