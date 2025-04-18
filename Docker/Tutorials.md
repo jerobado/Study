@@ -7,3 +7,6 @@
 
 ## How to run an ASP.NET Core application + SQL Server in Docker
 - TODO
+
+
+## How to create a user and database in PostgreSQL
