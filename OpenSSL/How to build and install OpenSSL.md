@@ -32,7 +32,12 @@
     $ sudo make install
     ```
 
-6. Run and check installed version
+6. Run `ldconfig`
+    ```
+    $ sudo ldconfig /usr/local/lib64/
+    ```
+
+7. Run and check installed version
     ```
     $ openssl version
     ```
