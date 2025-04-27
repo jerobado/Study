@@ -61,7 +61,12 @@
     >>>
     ```
 
+### Building Python with OpenSSL
+
+TODO: add steps
+
 ## Resources
 - [Build Instructions](https://github.com/python/cpython#build-instructions)
 - [Installing multiple versions](https://github.com/python/cpython#installing-multiple-versions)
 - [Setup and building](https://devguide.python.org/getting-started/setup-building/)
+- [Building Python with SSL support in non-standard location](https://stackoverflow.com/questions/5937337/building-python-with-ssl-support-in-non-standard-location)
