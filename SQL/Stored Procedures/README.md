@@ -14,3 +14,4 @@ References
 
 - [W3 Schools](https://www.w3schools.com/sql/sql_stored_procedures.asp)
 - [TechTarget](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwizwvap8a3xAhXCDaYKHSHtCZwQFjAHegQIAxAD&url=https%3A%2F%2Fsearchoracle.techtarget.com%2Fdefinition%2Fstored-procedure&usg=AOvVaw0kfK9v2q76BERBKY2rwmEI)
+- [Create a stored procedure](https://learn.microsoft.com/en-us/sql/relational-databases/stored-procedures/create-a-stored-procedure?view=sql-server-ver17)
