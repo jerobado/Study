@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Tooltip Tutorial</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+    <link href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+    <!-- Tooltip -->
+    <script>
+        $(function() {
+            $("#tooltipInput").tooltip({
+                position: {
+                    my: "center top",
+                    at: "center bottom+10"
+                }
+            });
+        });
+    </script>
+
+</head>
+
+
+<body>
+
+    <h1>Tooltip Example</h1>
+    <p>Hover over the words below to see the tooltips:</p>
+
+    <div class="ui-widget">
+        <label for="tooltipInput">Hover over this input: </label>
+        <input id="tooltipInput" title="This is a tooltip for the input field.">
+    </div>
+
+
+
+</html>
