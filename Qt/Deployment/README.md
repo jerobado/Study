@@ -10,8 +10,11 @@
     - Copy the entire `release` build directory and rename it to `deploy`:
     
       ```cmd
-      xcopy /E /I release deploy
+      xcopy /E /I /D release deploy
       ```
+    - `/E` - Copy all subfolders, including empty ones
+    - `/I` - Assume destination is a folder if it doesn’t exist
+    - `/D` - Copy only files that changed (incremental copy)
 
 3. **Add `windeployqt` to PATH**
     - Locate the `windeployqt.exe` command, typically found in `C:\Qt\<version>\<compiler>\bin`.
