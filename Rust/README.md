@@ -3,6 +3,7 @@
 - Rust programs typically run as fast as or faster than C++ programs
 - writing concurrent is trivial
 - no garbage collector
+- immutable by default
 
 ## Development Tools
 
