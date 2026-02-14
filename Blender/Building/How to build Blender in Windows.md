@@ -7,6 +7,8 @@
 
 ### Steps
 
+#### Using the CLI
+
 1. Clone repository inside the `blender-git` directory
 
     ```
@@ -30,6 +32,18 @@
     ```
     ./make.bat debug developer
     ```
+
+#### Using Visual Studio 2022
+
+1. In the `build_xxx` folder, find and open `Blender.sln`
+
+2. Then in the Solution Explorer, find `CMakePredefinedTargets` > `INSTALL` target.
+
+3. Right-click `INSTALL` target and select **Build**
+
+    This will build and install Blender in the output folder. This will take some few hours to complete depending on your machine.
+
+Once the install target has been built once, you can now work with the code as usual in Visual Studio. **Build** > **Build Solution** can be used to rebuild after making changes.
 
 
 ## References
