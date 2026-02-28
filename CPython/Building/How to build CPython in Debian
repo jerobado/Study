@@ -1,0 +1,104 @@
+# How to build CPython in Debian
+
+
+### Prerequisites
+- Python dependencies
+- wget
+- tar
+
+
+### Steps
+
+1. Enable and install source packages in `/etc/apt/sources.list`
+
+    ```bash
+    deb http://deb.debian.org/debian trixie main
+    deb-src http://deb.debian.org/debian trixie main
+
+    deb http://security.debian.org/debian-security trixie-security main
+    deb-src http://security.debian.org/debian-security trixie-security main
+
+    # optional, if you want to get the latest versions
+    deb http://ftp.debian.org/debian trixie-backports main
+    deb-src http://ftp.debian.org/debian trixie-backports main
+    ```
+
+    Then, update and upgrade using `apt`
+
+    ```bash
+    sudo apt update -y
+    sudo apt upgrade -y
+    ```
+
+2. Once source packages are updated, you can now install build dependencies
+
+    ```bash
+    sudo apt build-dep python3
+    sudo apt install pkg-config
+    ```
+
+3. Download your preferred CPython source code
+
+    ```bash
+    wget https://www.python.org/ftp/python/3.12.12/Python-3.12.12.tar.xz
+    ```
+
+4. Unzip tar file
+
+    ```bash
+    tar -xf Python-3.12.12.tar.xz
+    cd Python-3.12.12
+    ```
+
+5. Run `./configure`
+
+    ```bash
+    ./configure
+    ```
+
+6. Build using `make`
+    
+    ```
+    make -j8 
+    ``` 
+
+    `-j8`, utlizing our CPU cores for faster building
+
+    Once the build succeeds, you will see the following:
+
+    ```
+    The following modules are *disabled* in configure script:
+    _sqlite3
+
+    The necessary bits to build these optional modules were not found:
+    _bz2                  _ctypes               _ctypes_test
+    _curses               _curses_panel         _dbm
+    _gdbm                 _hashlib              _lzma
+    _ssl                  _tkinter              _uuid
+    nis                   readline              zlib
+    To find the necessary bits, look in configure.ac and config.log.
+
+    Could not build the ssl module!
+    Python requires a OpenSSL 1.1.1 or newer
+
+    Checked 111 modules (31 built-in, 63 shared, 1 n/a on linux-x86_64, 1 disabled, 15 missing, 0 failed on import)
+    ```
+
+7. Run `python` that you built
+
+    ```bash
+    $ .\python
+    Python 3.12.12 (main, Feb 28 2026, 09:20:00) [GCC 14.2.0] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> 
+    ```
+
+You may install the python version that you built as follows:
+
+`make install` - this will be installed as your main Python version
+
+`make altinstall` - this will install it separately without overriding your main Python version
+
+
+### References
+- [Install Dependencies](https://devguide.python.org/getting-started/setup-building/index.html#install-dependencies)
