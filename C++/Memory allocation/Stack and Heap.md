@@ -1,6 +1,6 @@
 # Stack and Heap Memory
 
-## Stack
+### Stack
 - memory is allocated in the stack when:
     - a function is called
     - a local variable is declared
@@ -25,7 +25,7 @@ int main()
 }
 ```
 
-## Heap
+### Heap
 - memory is allocated in the heap when:
     - using the `new` operator followed by the constructor
     - using `new []`
@@ -36,5 +36,5 @@ int main()
     - use `free()` function
 - **allocated explicitly by programmers and <ins>it won't be deallocated until it is explicitly freed</ins>**
 
-# Resources
+## Resources
 - [Stack and Heap Memory](https://courses.engr.illinois.edu/cs225/fa2022/resources/stack-heap/)
