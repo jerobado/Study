@@ -29,6 +29,11 @@ winget list --upgrade-available
 winget upgrade cmake
 ```
 
+### Upgrade all apps
+```
+winget upgrade --all
+```
+
 
 ## References
 - [Use WinGet to install and manage applications](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
