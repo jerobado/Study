@@ -19,6 +19,11 @@ winget list
 winget list cmake
 ```
 
+### Show app details
+```
+winget list CMake --details
+```
+
 ### List installed app that's upgradable
 ```
 winget list --upgrade-available
