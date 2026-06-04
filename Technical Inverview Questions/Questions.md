@@ -17,6 +17,13 @@ What is `CancellationToken`
 
 ## Design Patterns
 
+What is SOLID?
+- **Single Responsibility** - a class should only have one specific job or responsiblity
+- **Open/Closed** - you should be able to add new functionality withtout altering existing, tested code
+- **Liskov Substitution** - objects of a subclass should behave in a way that they can replace objects of their parent class without breaking the application
+- **Interface Segragation** - create atomic interfaces
+- **Dependency Injection** - high-level modules should not depend on low level modules, should depend on abstraction
+
 What is Dependency Injection?
 - is a design pattern for achieving Inversion of Control (IoC) principle
 - it's the process of "injecting" objects via interface in a class without the class directly implementing it
