@@ -1,5 +1,11 @@
 # How to create an installer
 
+## Pre-requisites
+- Your running application in `.exe` format along with its dependencies
+- Qt Installer Framework
+
+## Steps
+
 1. Create a folder structure as follows:
     ```
     config
@@ -46,9 +52,11 @@
     </Package>
     ```
 
-4. Create and package your application in `.zip` file in `data` directory
+4. Create a `license.txt` file, paste the content of your choosen license and put the file in the **meta** directory.
 
-5. Run `binarycreator` tool
+5. Create and package your application in `.zip` file and put it in the `data` directory
+
+6. Run `binarycreator` tool
 
     On Windows
     ```
