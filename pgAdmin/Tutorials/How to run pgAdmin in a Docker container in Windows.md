@@ -55,7 +55,7 @@ In order to connect to another postgres database, it should be running separatel
 
 4. Enter the following details:
 
-    Host name/address: `hub.docker.internal`
+    Host name/address: `host.docker.internal`
 
     Maintenance database: _database name_
 
@@ -68,8 +68,8 @@ In order to connect to another postgres database, it should be running separatel
     You should now be connected to your database
 
 ### Reminders
-- `hub.docker.internal` is handy domain when connecting pgadmin and a database when they are running in a different docker network.
-- You can create a shared docker network for your pgAdmin and database if you don't want to use the `hub.docker.internal` domain
+- `host.docker.internal` is handy domain when connecting pgadmin and a database when they are running in a different docker network.
+- You can create a shared docker network for your pgAdmin and database if you don't want to use the `host.docker.internal` domain
 
 ## References
 - [Container Deployment &mdash; pgAdmin 4 9.16 documentation](https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html)
