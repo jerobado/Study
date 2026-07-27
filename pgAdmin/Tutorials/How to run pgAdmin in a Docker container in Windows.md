@@ -22,12 +22,12 @@
     ```yml
     services:
         pgadmin:
-        container_name: pgadmin-web
-        image: dpage/pgadmin4:latest
-        env_file:
-        - ./pgadmin.env
-        ports:
-        - "5050:80"
+            container_name: pgadmin-web
+            image: dpage/pgadmin4:latest
+            env_file:
+            - ./pgadmin.env
+            ports:
+            - "5050:80"
     ```
 
 3. Start the container using Docker Compose
@@ -69,7 +69,7 @@ In order to connect to another postgres database, it should be running separatel
 
 ### Reminders
 - `host.docker.internal` is handy domain when connecting pgadmin and a database when they are running in a different docker network.
-- You can create a shared docker network for your pgAdmin and database if you don't want to use the `host.docker.internal` domain
+- You can also create a shared docker network for your pgAdmin and database if you don't want to use the `host.docker.internal` domain
 
 ## References
 - [Container Deployment &mdash; pgAdmin 4 9.16 documentation](https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html)
