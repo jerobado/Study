@@ -1,10 +1,36 @@
 ## .NET
 
-Value types vs reference types
+### Value types vs Reference types
+
+Value types
+- value types store their data directly in memory
+- primitive types like `int`, `float`, `char`, `bool`, `struct`, and `enum` 
+- when assigned to a new variable, a copy of the value is made
+- modifying one variable does not affect the original
+
+Reference types
+- store a reference (memory address) to memory instead of storing the value directly
+- when assigned to a new variable, both variables point to the same memory location, meaning changes to one object affect the other
+- example are `class`, arrays
 
 Difference between `IEnumerable` and `IQueryable`
 
-Abstract class vs Interface
+### Abstract class vs Interface
+
+Interface
+- defines a contract that a class must follow
+- contains method signatgures only (no implementations)
+- a class can have multiple interfaces
+
+Abstract class
+- can have abstract methods (no implementation) and concrete methods (with implementation)
+- allows related classes to shared code
+- a class can inherit only one abstract class
+
+
+Compilation process
+- C# code is translateed to Common Intermediate Language (CIL)
+- CIL is executed by the Common Language Runtime (CLR)
 
 ## C#
 
@@ -14,6 +40,25 @@ Abstract class vs Interface
 - async methods can be sequential or parallel
 What is `CancellationToken`
 - is a signalling mechanis that let's you cancel long running or asynchronous tasks gracefully without killing threads
+
+Delegate
+- is a type that represents a referenced to a method
+- it allows method to be passed as arguments
+- ideal for event handling, callbacks, and functinoal programming
+
+`func<T>`
+- returns a value
+- `Func<int, int, int> add = (x, y) => x + y`
+
+`Action<T>`
+- returns void
+- takes parameters
+- `Action<string> print = Console.WriteLine`
+
+`Predicate<T>`
+- returns a bool
+- `Predicate<int> isEven = x => x % 2 == 0`
+
 
 ## Design Patterns
 
@@ -38,3 +83,7 @@ What are the pillars of OOP
 - _Abstraction_ is the process of showing only the essential features of an object while hiding complext background iplementations
 - _Inheritance_ allows a class (child) to inherit or acquire the properties and methods of an existing class (parent)
 - Polymorphism allows a method in a class to behave differently via method overloading or overriding
+
+
+## References
+- [.NET Interview Questions and Answers (With Code Examples)](https://zerotomastery.io/blog/dot-NET-interview-questions/)
