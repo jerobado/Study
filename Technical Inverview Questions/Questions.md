@@ -29,7 +29,7 @@ Abstract class
 
 
 Compilation process
-- C# code is translateed to Common Intermediate Language (CIL)
+- C# code is translated to Common Intermediate Language (CIL)
 - CIL is executed by the Common Language Runtime (CLR)
 
 ## C#
@@ -38,13 +38,15 @@ Compilation process
 - async marks a method as asynchronous
 - awaits pauses execution until a task completes
 - async methods can be sequential or parallel
-What is `CancellationToken`
-- is a signalling mechanis that let's you cancel long running or asynchronous tasks gracefully without killing threads
+- async/await is best used for I/O-bound tasks where your web application spends time waiting for external response rather than doing heavy CPU heavy calculations
+
+`CancellationToken`
+- is a signalling mechanism that let's you cancel long running or asynchronous tasks gracefully without killing threads
 
 Delegate
 - is a type that represents a referenced to a method
 - it allows method to be passed as arguments
-- ideal for event handling, callbacks, and functinoal programming
+- ideal for event handling, callbacks, and functional programming
 
 `func<T>`
 - returns a value
