@@ -80,8 +80,43 @@ Requirements
 
 ### error: bad shim signature
 - SecureBoot is preventing the custom built kernel to boot
-- you need to disable it by using `mokutil` tool
+- You need to disable it by using `mokutil` tool
 
 ```
 sudo mokutil --disable-validation
 ```
+
+### Can't detect Wi-Fi adapter after booting?
+
+- Check logs 
+    ```bash
+    # check kernel logs
+    sudo dmesg | grep iwlwifi
+    
+    # check current boot logs
+    journalctl -b
+    ```
+
+    `iwlwifi` is the kernel driver for Intel wireless network cards
+
+- Cause: the linux kernel version that I compiled is looking for a specific/latest firmware version of my wifi device
+
+    ```
+    [    9.816308] iwlwifi 0000:00:14.3: no suitable firmware found!
+    [    9.816312] iwlwifi 0000:00:14.3: iwlwifi-bz-b0-gf-a0-100 is required
+    [    9.816317] iwlwifi 0000:00:14.3: check git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+    ```
+
+
+- Download the firmware and copy to `/lib/firmware` directory
+    ```bash
+    wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/iwlwifi-bz-b0-gf-a0-100.ucode
+    sudo cp iwlwifi-bz-b0-gf-a0-100.ucode /lib/firmware/
+    ```
+- Update `/boot/initrd-img-<your kernel version>` so that it will include your downloaded firmware when you boot
+
+    ```bash
+    sudo update-initramfs -u -k <your kernel version>
+    ```
+- Reboot to your compiled kernel version
+
