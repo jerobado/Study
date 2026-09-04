@@ -14,13 +14,19 @@ Requirements
     sudo apt install build-essential vim git cscope libncurses-dev libssl-dev bison flex libelf-dev bc binutils dwarves openssl pahole perl-base
     ```
 
-2. Clone mainline repository
+2. Clone linux stable repository
 
     ```
-    git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+    git clone https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/
     ```
 
-    As of this writing, the size of the repository is 3.70 GiB. This will take a while depending on your download speed.
+    As of this writing, the size of the repository is 6.64 GiB. This will take a while depending on your download speed.
+
+3. Create and switch to a kernel branch version you wish to compile
+
+    ```
+    git switch -c linux-7.2.3 v7.2.3
+    ```
 
 3. Copy your current's OS config from `/boot` to `.config`
 
