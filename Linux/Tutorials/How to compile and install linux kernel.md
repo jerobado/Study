@@ -71,7 +71,7 @@ Requirements
 
     ```
     ls /lib/modules/$(make kernelrelease)
-    ls /boot/
+    ls /boot/*$(make kernelrelease) 
     ```
 
 7. Reboot your system
