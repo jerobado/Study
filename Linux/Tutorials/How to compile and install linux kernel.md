@@ -28,6 +28,8 @@ Requirements
     git switch -c linux-7.2.3 v7.2.3
     ```
 
+    Use `git tag -l "tag name"` to list and search for tags.
+
 3. Copy your current's OS config from `/boot` to `.config`
 
     ```
