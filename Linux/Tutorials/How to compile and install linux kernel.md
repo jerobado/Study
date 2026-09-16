@@ -69,6 +69,8 @@ Requirements
     sudo make modules_install install
     ```
 
+    Took 18 minutes to install.
+
 7. Verify installed locations
 
     ```
