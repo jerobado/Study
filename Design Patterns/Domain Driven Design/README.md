@@ -52,6 +52,10 @@
 
 # Layers
 
+**Presentation layer**
+- responsible for handling user interactions
+- can be a Web or API
+
 **Domain layer**
 - responsible for representing concepts of the business, information about the business situation, and business rules
 - the heart of the business software
@@ -80,6 +84,7 @@ A user clicks the Create account button. The workflow will be:
 - is how tht e data that is initially hel in domain entities (in memory) is persisted in databases or another persistent store
 
 **<ins>REMEMBER</ins>**
+- Presentation layer depends on Application
 - Application layer depends on Domain and Infrastructure
 - Infrastructure depends on Domain
 - **Domain doesn't depend on any layer**
