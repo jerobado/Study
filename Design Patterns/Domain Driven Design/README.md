@@ -85,8 +85,8 @@ A user clicks the Create account button. The workflow will be:
 
 **<ins>REMEMBER</ins>**
 - Presentation layer depends on Application
-- Application layer depends on Domain and Infrastructure
-- Infrastructure depends on Domain
+- Application layer depends on Domain
+- Infrastructure depends on Application
 - **Domain doesn't depend on any layer**
 
 # Resource(s)
