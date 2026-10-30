@@ -67,6 +67,14 @@
 - serves as the bridge between the domain layer and the outer layers of the system, such as the user interface or external services.
 - it’s responsible for implementing use cases, coordinating tasks, and handling cross-cutting concerns like validation and authorization.
 
+For example:
+
+A user clicks the Create account button. The workflow will be:
+1. Create tenant
+2. Create setting
+3. Save tenant
+4. Save setting
+5. Notify
 
 **Infrastructure layer**
 - is how tht e data that is initially hel in domain entities (in memory) is persisted in databases or another persistent store
