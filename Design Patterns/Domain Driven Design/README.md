@@ -89,6 +89,26 @@ A user clicks the Create account button. The workflow will be:
 - Infrastructure depends on Application
 - **Domain doesn't depend on any layer**
 
+### Layer mapping guide
+
+| Layer | Primary Purpose | What Lives Here | Code Examples / Concepts | Framework Dependencies |
+| :--- | :--- | :--- | :--- | :--- |
+| **Domain** | Core business logic and rules | Entities, Value Objects, Domain Services, Domain Events | `Customer`, `Money`, `Order.CalculateTotal()` | Pure C# only (*No web, DB, or UI*) |
+| **Application** | Use-case orchestration and workflows | Application Services, Handlers, DTOs (`*Request`/`*Response`), `ICurrentUserService` interface | `UpdateCustomerRequest`, `CreateOrderHandler` | Agnostic interfaces (*No Blazor or EF Core*) |
+| **Infrastructure** | Database, hardware, and external integration implementations | EF Core `DbContext`, Repository implementations, API clients, Email services | `SqlCustomerRepository`, `SmtpEmailSender` | Entity Framework, Third-party SDKs |
+| **UI / Presentation** | User interactions, rendering, and web framework glue | Blazor Components (`.razor`), `EditForm`, `AuthenticationStateProvider`, `BlazorCurrentUserService` | `CustomerEdit.razor`, Blazor auth adapters | Blazor, `Microsoft.AspNetCore.Components` |
+
+---
+
+### Quick Decision Guide (The "Swap" Test)
+
+* **UI Layer:** Breaks if you change the UI framework (e.g., Blazor to React).
+* **Infrastructure Layer:** Breaks if you change the persistence technology or external providers (e.g., EF Core to Dapper, SendGrid to Mailgun).
+* **Application Layer:** Breaks if your application workflows or DTO API contracts change.
+* **Domain Layer:** Only changes if your actual business rules or domain model change.
+
+
+
 # Resource(s)
 - [Domain Driven Design by Martin Fowler](https://martinfowler.com/bliki/DomainDrivenDesign.html)
 - [Domain-driven design via Wikipedia](https://en.wikipedia.org/wiki/Domain-driven_design)
