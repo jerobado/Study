@@ -3,6 +3,11 @@
 - Certbot is made by the Electronic Frontier Foundation (EFF), a 501(c)3 nonprofit based in San Francisco, CA, that defends digital privacy, free speech, and innovation.
 
 ### Instruction
+Install
+```
+sudo apt install certbot python3-certbot-apache
+```
+
 Get and install a certificate
 ```
 sudo certbot --apache

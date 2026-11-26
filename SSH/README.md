@@ -7,7 +7,7 @@
 1. Use the `ssh-keygen` command to generate public-private keys in your client machine
 
     ```
-    $ ssh-keygen -f ~/path/to/my-super-secret-key -t ed25519
+    $ ssh-keygen -f ~/path/to/my-super-secret-key -t ed25519 -C "key purpose"
     ```
 
 2. Copy the Public key to the server using the `ssh-copy-id` command
